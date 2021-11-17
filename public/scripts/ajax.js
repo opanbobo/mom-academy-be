@@ -10,24 +10,36 @@ $('#loginForm').submit(function(e) {
 
 function register(data,token) {
     $.ajax({
-        url: base_url + "home/login",
+        url: base_url + "login",
         type: "POST",
         data:data,
         dataType: 'json',
         beforeSend: function () {
+            var spiner = $('.btn-spinner-login')
+            spiner.html(` <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>`)
             // $('#modal-default .modal-body').html('Loading....');
             // $('#modal-default .modal-footer .modal-save').attr('disabled', 'disabled');
+
         },
         headers: {
             'X-CSRF-TOKEN': token
         },
         success: function (data) {
             console.log(data)
-            // if (data['code'] == 200) {
-            //     $('#modal-default .modal-body').html('<div class="alert alert-success">' + data['message'][0] + '</div>');
-            // } else {
-            //     $('#modal-default .modal-body').html('<div class="alert alert-danger">' + data['message'][0] + '</div>');
-            // }
+            var spiner = $('.btn-spinner-login').find('.spinner-border')
+            spiner.fadeOut(200)
+            if (data['code'] == 200) {
+                // $('#modalRegist .modal-body').html('<div class="alert alert-success">' + data['message'][0] + '</div>');
+                window.location.href = '/'
+            } else {
+                var message = data['message']
+                if (data['message']['email'] !== undefined || data['message']['password'] !== undefined) {
+                    message = 'required email and password'
+                }
+                $('#modalLogin .form-group.alert').html('<div class="alert alert-danger">' + message + '</div>');
+            }
 
             // setTimeout(function () {
             //     $('#modal-default .modal-body').html('Loading....');

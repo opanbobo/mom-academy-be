@@ -5,7 +5,7 @@
     <meta name="description" content="">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>mom academy fe</title>
+    <title>Mom Academy</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="{{ asset('css/vendor.css')}}">
@@ -16,23 +16,42 @@
     <script src="{{ asset('scripts/modernizr.js') }}"></script>
   </head>
   <body>
-   
+    {{-- <div class="overlay-bg">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div> --}}
     <div id="wrapper">
 		<div id="top-desktop">
 			<div class="orange-top">
 			<div class="container">
 				<div class="row justify-content-end">
-				<div class="col-md-6">
-					<div class="d-flex justify-content-end align-items-center">
-					<div class="user pr-2"><a data-dismiss="modal" data-toggle="modal" href="#modalLogin"><img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid"></a></div>
-					<div class="act-link pr-2 text-center"><a data-toggle="modal" data-target="#modalRegist">Join MoM</a></div>
-					<form class="searchbar">
-						<input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> 
-						<input type="submit" class="searchbar-submit" value="GO"> 
-						<span class="searchbar-icon"><i class="fa fa-search" aria-hidden="true"></i></span> 
-					</form>
+					<div class="col-md-6">
+						<div class="d-flex justify-content-end align-items-center">
+							@if (AppHelper::getAuth())
+              <div class="user pr-2">
+                {{-- <a data-dismiss="modal" data-toggle="modal" href="#modalLogin"> --}}
+                  <img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid">
+                {{-- </a> --}}
+							</div>
+								<div class=" pr-2 text-center">
+                 <span class="white-color">{{ ucwords(strtok(AppHelper::getAuth('user_name'), ' ')) }}</span>
+                </div>
+							@else	
+              <div class="user pr-2"><a data-dismiss="modal" data-toggle="modal" href="#modalLogin">
+                <img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid"></a>
+							</div>
+								<div class="act-link pr-2 text-center"><a data-toggle="modal" data-target="#modalRegist">Join MoM</a></div>
+							@endif
+							<form class="searchbar">
+								<input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> 
+								<input type="submit" class="searchbar-submit" value="GO"> 
+								<span class="searchbar-icon"><i class="fa fa-search" aria-hidden="true"></i></span> 
+							</form>
+						</div>
 					</div>
-				</div>
 				</div>            
 			</div>
 			</div>
@@ -198,6 +217,14 @@
               </div>
               <div class="form-group">
                 <button class="text-uppercase text-white font-weight-bold border-0 w-100 btn-submit-popup" type="submit">Next</button>
+                <div class="d-flex justify-content-center btn-spinner-login">
+                  {{-- <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div> --}}
+                </div>
+              </div>
+              <div class="form-group alert">
+                {{-- <div class="alert alert-danger">error</div> --}}
               </div>
               <div class="form-group">
                 <div class="" data-dismiss="modal" data-toggle="modal" href="#modalRegist">Belum punya akun? Yuk Daftar</div>

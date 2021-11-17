@@ -24,6 +24,28 @@ class Api extends Model
 
         return json_decode(AppHelper::guzzle($data), false, 512, JSON_BIGINT_AS_STRING);
     }
+    public static function event_with_limit($param)
+    {
+        $data['method'] = 'POST';
+        $data['url'] = 'https://zonderstudio.com/api/v1/eventByLimit?limit='.$param['limit'];
+        $data['param'] = [
+            'headers' => ['Authorization' => 'Bearer '.$param['token']],
+            // 'form_params' => $param
+        ];
+
+        return json_decode(AppHelper::guzzle($data), false, 512, JSON_BIGINT_AS_STRING);
+    }
+    public static function course_with_limit($param)
+    {
+        $data['method'] = 'POST';
+        $data['url'] = 'https://zonderstudio.com/api/v1/courseByLimit?limit='.$param['limit'];
+        $data['param'] = [
+            'headers' => ['Authorization' => 'Bearer '.$param['token']],
+            // 'form_params' => $param
+        ];
+
+        return json_decode(AppHelper::guzzle($data), false, 512, JSON_BIGINT_AS_STRING);
+    }
 
     // public static function getLists($param)
     // {

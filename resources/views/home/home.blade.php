@@ -23,84 +23,36 @@
 			<div class="column mb-5">
 			<h4 class="text-center mb-4">Class</h4>
 			<div class="row">
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img">
-						<a href="detail-class.html" class="thumb-video position-relative">
-						<img src="images/img-class-1.png" alt="" class="img-fluid">
-						<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-							<h6>Content Marketing to Grow Your Business</h6>
-							<div class="author">By Widya Safitri</div>
-						</div>                        
-						</a>
-					</div>
-					<div class="block-text w-100 p-3">
-						<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-						<h6 class="d-none d-sm-block"><a href="detail-class.html">Content Marketing to Grow Your Business</a></h6>
-						<div class="column">
-						<div class="author d-none d-sm-block">By Widya Safitri</div>
-						<div class="btn-act text-center">
-							<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-							<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
-						</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				</div>
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img">
-						<a href="detail-class.html" class="position-relative">
-						<img src="images/img-class-2.png" alt="" class="img-fluid">
-						<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-							<h6>Content Marketing to Grow Your Business</h6>
-							<div class="author">By Widya Safitri</div>
-						</div>   
-						</a>
-					</div>
-					<div class="block-text w-100 p-3">
-						<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-						<h6 class="d-none d-sm-block"><a href="detail-class.html">Content Marketing to Grow Your Business</a></h6>
-						<div class="column">
-						<div class="author d-none d-sm-block">By Widya Safitri</div>
-						<div class="btn-act text-center">
-							<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-							<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
-						</div>
+				@if(count($course)>0)
+                    @foreach ($course as $row)
+					<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+						<div class="block">
+							<div class="block-col position-relative">
+							<div class="img">
+								<a href="detail-class.html" class="thumb-video position-relative">
+								<img src="images/img-class-1.png" alt="" class="img-fluid">
+								<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
+									<h6>{{Str::words($row->course_name,5)}}</h6>
+									<div class="author">By Widya Safitri</div>
+								</div>                        
+								</a>
+							</div>
+							<div class="block-text w-100 p-3">
+								<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
+								<h6 class="d-none d-sm-block"><a href="detail-class.html">{{Str::words($row->course_name,5)}}</a></h6>
+								<div class="column">
+								<div class="author d-none d-sm-block">By Widya Safitri</div>
+								<div class="btn-act text-center">
+									<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
+									<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
+								</div>
+								</div>
+							</div>
+							</div>       
 						</div>
 					</div>
-					</div>       
-				</div>
-				</div>
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img">
-						<a href="detail-class.html" class="thumb-video position-relative">
-						<img src="images/img-class-3.png" alt="" class="img-fluid">
-						<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-							<h6>Content Marketing to Grow Your Business</h6>
-							<div class="author">By Widya Safitri</div>
-						</div>  
-						</a>
-					</div>
-					<div class="block-text w-100 p-3">
-						<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-						<h6 class="d-none d-sm-block"><a href="detail-class.html">Content Marketing to Grow Your Business</a></h6>
-						<div class="column">
-						<div class="author d-none d-sm-block">By Widya Safitri</div>
-						<div class="btn-act text-center">
-							<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-							<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
-						</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				</div>
+					@endforeach
+				@endif
 			</div>
 			</div>
 			<div class="column mb-5">
@@ -228,84 +180,36 @@
 			<h1 class="title text-center py-5 mt-3">MoM Events</h1>
 			<div class="column mb-5">
 			<div class="row">
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img">
-						<a href="detail-events.html" class="position-relative">
-						<img src="images/img-event-1.png" alt="" class="img-fluid">
-						<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-							<h6>Content Marketing to Grow Your Business</h6>
-							<div class="author">By Widya Safitri</div>
-						</div>  
-						</a>
-					</div>
-					<div class="block-text w-100 p-3">
-						<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-						<h6 class="d-none d-sm-block"><a href="detail-class.html">Content Marketing to Grow Your Business</a></h6>
-						<div class="column">
-						<div class="author d-none d-sm-block">By Widya Safitri</div>
-						<div class="btn-act text-center">
-							<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-							<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
+				@if(count($event)>0)
+                    @foreach ($event as $row)
+						<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+							<div class="block">
+								<div class="block-col position-relative">
+									<div class="img">
+										<a href="detail-events.html" class="position-relative">
+										<img src="images/img-event-1.png" alt="" class="img-fluid">
+										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
+											<h6>{{Str::words($row->course_name,5)}}</h6>
+											<div class="author">By Widya Safitri</div>
+										</div>  
+										</a>
+									</div>
+									<div class="block-text w-100 p-3">
+										<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
+										<h6 class="d-none d-sm-block"><a href="detail-class.html">{{Str::words($row->course_name,5)}}</a></h6>
+										<div class="column">
+										<div class="author d-none d-sm-block">By Widya Safitri</div>
+										<div class="btn-act text-center">
+											<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
+											<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
+										</div>
+										</div>
+									</div>
+								</div>       
+							</div>
 						</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				</div>
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img">
-						<a href="detail-events.html" class="position-relative">
-						<img src="images/img-event-2.png" alt="" class="img-fluid">
-						<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-							<h6>Content Marketing to Grow Your Business</h6>
-							<div class="author">By Widya Safitri</div>
-						</div>  
-						</a>
-					</div>
-					<div class="block-text w-100 p-3">
-						<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-						<h6 class="d-none d-sm-block"><a href="detail-class.html">Content Marketing to Grow Your Business</a></h6>
-						<div class="column">
-						<div class="author d-none d-sm-block">By Widya Safitri</div>
-						<div class="btn-act text-center">
-							<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-							<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
-						</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				</div>
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img">
-						<a href="detail-events.html" class="position-relative">
-						<img src="images/img-event-3.png" alt="" class="img-fluid">
-						<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-							<h6>Content Marketing to Grow Your Business</h6>
-							<div class="author">By Widya Safitri</div>
-						</div>  
-						</a>
-					</div>
-					<div class="block-text w-100 p-3">
-						<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-						<h6 class="d-none d-sm-block"><a href="detail-class.html">Content Marketing to Grow Your Business</a></h6>
-						<div class="column">
-						<div class="author d-none d-sm-block">By Widya Safitri</div>
-						<div class="btn-act text-center">
-							<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-							<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
-						</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				</div>
+					@endforeach
+				@endif
 			</div>
 			</div>
 		</div>

@@ -33,10 +33,8 @@ Route::group(['as' => 'landing.'], function () {
 // Route::get('/login', 'LoginController@index');
 
 // PRODUCT
-Route::group(['prefix' => 'product'], function () {
-    Route::get('/category', 'ProductController@category');
-    Route::get('/list', 'ProductController@lists');
-    Route::get('/detail', 'ProductController@detail');
+Route::group(['prefix' => 'login'], function () {
+    Route::post('/', 'LoginController@index')->name('login');   
 });
 
 // order

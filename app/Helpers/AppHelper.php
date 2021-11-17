@@ -2,46 +2,49 @@
 
 namespace App\Helpers;
 
+use Crypt;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Crypt;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
 class AppHelper
 {
 
-    public static function auth($param = '')
+    public static function getAuth ($param = '')
     {
-        $cookie = Crypt::decrypt(Cookie::get(config('custom.cookie'))); 
+        $session = request()->session()->get('user_login');
         $results = '';
-        if (!empty($cookie)){
-            $decode = json_decode($cookie);
-            $cache = Cache::get(config('custom.cookie') . $decode->user_id);
-            if ($cache) {
-                $key_exists = array_key_exists($param, $cache);
+
+        if (!empty($session)) {
+            $session = (array)json_decode($session);
+
+            if (empty($param)) {
+                $results = (object)$session;
+            }
+            else {
+                $key_exists = array_key_exists($param, $session);
+
                 if ($key_exists) {
-                    $results = $cache[$param];
-                } else {
+                    $results = $session[$param];
+                }
+                else {
                     $results = '';
                 }
             }
         }
+
         return $results;
     }
 
-    public static function mem_cache()
-    {   
+    // public static function mem_cache()
+    // {   
         
-        $decode = Crypt::decrypt(Cookie::get(config('custom.cookie')));        
-        if (!empty($decode)) {
-            $decode = json_decode($decode);
-            // Cache::forget(config('custom.cookie') . $decode->user_id);
-            return Cache::get(config('custom.cookie') . $decode->user_id);
-        } else {
-            return null;
-        }
-    }
+    //     $decode = json_decode(Crypt::decrypt(Cookie::get('user_mem_')));
+    //     $cache = Cache::get('user_mem_' . $decode->admin_id);
+
+    //     return $cache;
+    // }
     public static function guzzle($data)
     {
         $client = new Client();
