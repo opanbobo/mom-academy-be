@@ -188,15 +188,15 @@
 									<div class="img">
 										<a href="detail-events.html" class="position-relative">
 										<img src="images/img-event-1.png" alt="" class="img-fluid">
-										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-											<h6>{{Str::words($row->course_name,5)}}</h6>
+										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">course_name
+											<h6>{{Str::words($row->event_name,5)}}</h6>
 											<div class="author">By Widya Safitri</div>
 										</div>  
 										</a>
 									</div>
 									<div class="block-text w-100 p-3">
 										<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-										<h6 class="d-none d-sm-block"><a href="detail-class.html">{{Str::words($row->course_name,5)}}</a></h6>
+										<h6 class="d-none d-sm-block"><a href="detail-class.html">{{Str::words($row->event_name,5)}}</a></h6>
 										<div class="column">
 										<div class="author d-none d-sm-block">By Widya Safitri</div>
 										<div class="btn-act text-center">

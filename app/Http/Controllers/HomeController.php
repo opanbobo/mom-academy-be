@@ -22,7 +22,7 @@ class HomeController extends Controller
             // 'token' => $data_session->accessToken
             'token' => $token
         ]);
-
+        // dd($data_course);
         $data_event = Api::event_with_limit([
             'limit' => 3,
             // 'token' => $data_session->accessToken
