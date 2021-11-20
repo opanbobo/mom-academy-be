@@ -26,30 +26,16 @@ use Illuminate\Support\Facades\Route;
 Route::group(['as' => 'landing.'], function () {
     Route::get('/','HomeController@index')->name('index'); // BASE URL
     Route::get('/home','HomeController@index')->name('home');
-    Route::post('/home/login','HomeController@login')->name('login');
-    Route::get('/logout', 'HomeController@signout');
 });
 
-// Route::get('/login', 'LoginController@index');
-
-// PRODUCT
+// Login
 Route::group(['prefix' => 'login'], function () {
     Route::post('/', 'LoginController@index')->name('login');   
 });
 
-// order
-Route::group(['prefix' => 'order'], function () {
-    Route::get('/cart', 'OrderController@cart');
-    Route::get('/checkout', 'OrderController@checkout');
-    Route::get('/tracking', 'OrderController@tracking');
-    Route::get('/cancel', 'OrderController@cancel');
-    Route::get('/done', 'OrderController@done');
-    Route::get('/empty-cart', 'OrderController@empty');
-    Route::get('/empty-tracking', 'OrderController@empty_tracking');
-});
 
 // Profile
-Route::group(['prefix' => 'profile'], function () {
-    Route::get('/', 'ProfileController@index');
-    Route::get('/edit', 'ProfileController@edit');
+Route::group(['prefix' => 'class'], function () {
+    Route::get('/', 'ClassController@index');
+    Route::get('/detail/{slug}', 'ClassController@detail');
 });

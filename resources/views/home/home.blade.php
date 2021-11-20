@@ -39,7 +39,7 @@
 							</div>
 							<div class="block-text w-100 p-3">
 								<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-								<h6 class="d-none d-sm-block"><a href="detail-class.html">{{Str::words($row->course_name,5)}}</a></h6>
+								<h6 class="d-none d-sm-block"><a href="{{url('class/detail/'.$row->course_id)}}">{{Str::words($row->course_name,5)}}</a></h6>
 								<div class="column">
 								<div class="author d-none d-sm-block">By Widya Safitri</div>
 								<div class="btn-act text-center">
@@ -196,7 +196,7 @@
 									</div>
 									<div class="block-text w-100 p-3">
 										<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-										<h6 class="d-none d-sm-block"><a href="detail-class.html">{{Str::words($row->event_name,5)}}</a></h6>
+										<h6 class="d-none d-sm-block"><a href="{{ url('/class/detail/'.$row->event_id)}}">{{Str::words($row->event_name,5)}}</a></h6>
 										<div class="column">
 										<div class="author d-none d-sm-block">By Widya Safitri</div>
 										<div class="btn-act text-center">

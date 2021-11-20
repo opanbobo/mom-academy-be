@@ -58,7 +58,7 @@
 			<div class="after-orange-top">
 			<div class="container">
 				<div class="top-wrapper d-flex py-3">
-				<div class="logo"><a href="index.html"><img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid"></a></div>
+				<div class="logo"><a href="{{ url('/')}}"><img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid"></a></div>
 				<div class="menus d-flex align-items-center">
 					<ul>
 					<li class="mr-4"><a href="detail-class.html">The Academy</a></li>
