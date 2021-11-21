@@ -30,7 +30,7 @@
 							<div class="block-col position-relative">
 							<div class="img">
 								<a href="detail-class.html" class="thumb-video position-relative">
-								<img src="images/img-class-1.png" alt="" class="img-fluid">
+								<img src="{{ asset('images/img-class-1.png') }}" alt="" class="img-fluid">
 								<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
 									<h6>{{Str::words($row->course_name,5)}}</h6>
 									<div class="author">By Widya Safitri</div>
@@ -63,7 +63,7 @@
 					<div class="block-module bg-orange">
 					<div class="img">
 						<a href="detail-module.html" class="position-relative">
-						<img src="images/img-module.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid">
 						<div class="title-mobile d-block d-sm-none text-white text-uppercase position-absolute font-weight-bold p-3">MEMBUAT POT GANTUNG MACRAME</div>
 						</a>
 					</div>
@@ -82,7 +82,7 @@
 					<div class="block-module bg-yellow">
 					<div class="img">
 						<a href="detail-module.html" class="position-relative">
-						<img src="images/img-module.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid">
 						<div class="title-mobile text-white d-block d-sm-none text-uppercase position-absolute font-weight-bold p-3">MEMBUAT POT GANTUNG MACRAME</div>
 						</a>
 					</div>
@@ -101,7 +101,7 @@
 					<div class="block-module bg-blue">
 					<div class="img">
 						<a href="detail-module.html" class="position-relative">
-						<img src="images/img-module.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid">
 						<div class="title-mobile text-white d-block d-sm-none text-uppercase position-absolute font-weight-bold p-3">MEMBUAT POT GANTUNG MACRAME</div>
 						</a>
 					</div>
@@ -129,7 +129,7 @@
 				<div class="sliders-wrapper">
 				<div class="slider multiple-items">
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-1.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Widya Safitri</div>
 						<div class="position">Bussiness Coach</div>
@@ -137,7 +137,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-2.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-2.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Farisah Sabrina</div>
 						<div class="position">Financial Expert</div>
@@ -145,7 +145,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-3.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-3.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Restiana Tobing</div>
 						<div class="position">Digital Marketing</div>
@@ -153,7 +153,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-4.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-4.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Widya Safitri</div>
 						<div class="position">Bussiness Coach</div>
@@ -161,7 +161,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-1.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Widya Safitri</div>
 						<div class="position">Bussiness Coach</div>
@@ -176,7 +176,7 @@
 	</div>
 	<div id="events" class="section py-5">
 		<div class="container">
-			<div class="banner-ads text-center"><img src="images/dummy.jpg" alt="" class="img-fluid"></div>
+			<div class="banner-ads text-center"><img src="{{ asset('images/dummy.jpg') }}" alt="" class="img-fluid"></div>
 			<h1 class="title text-center py-5 mt-3">MoM Events</h1>
 			<div class="column mb-5">
 			<div class="row">
@@ -187,7 +187,7 @@
 								<div class="block-col position-relative">
 									<div class="img">
 										<a href="detail-events.html" class="position-relative">
-										<img src="images/img-event-1.png" alt="" class="img-fluid">
+										<img src="{{ asset('images/img-event-1.png') }}" alt="" class="img-fluid">
 										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">course_name
 											<h6>{{Str::words($row->event_name,5)}}</h6>
 											<div class="author">By Widya Safitri</div>
@@ -232,7 +232,7 @@
 				<div class="block-label rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-2">Product of The Day</div>
 				<div class="block product-off-the-day">
 					<div class="block-col position-relative">
-					<div class="img h-100"><a href="detail-market.html" class="position-relative h-100"><img src="images/img-product-day.png" alt="" class="img-fluid h-100"></a></div>
+					<div class="img h-100"><a href="detail-market.html" class="position-relative h-100"><img src="{{ asset('images/img-product-day.png') }}" alt="" class="img-fluid h-100"></a></div>
 					<div class="block-text w-100 p-3">
 						<h6><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -248,7 +248,7 @@
 				<div class="block-label mt-85 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Books</div>
 				<div class="block">
 					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-1.png" alt="" class="img-fluid"></a></div>
+					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-1.png') }}" alt="" class="img-fluid"></a></div>
 					<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -264,7 +264,7 @@
 				<div class="block-label mt-85 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Books</div>
 				<div class="block">
 					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-1.png" alt="" class="img-fluid"></a></div>
+					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-1.png') }}" alt="" class="img-fluid"></a></div>
 					<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -280,7 +280,7 @@
 				<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">UMKM Product</div>
 				<div class="block">
 					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-2.png" alt="" class="img-fluid"></a></div>
+					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-2.png') }}" alt="" class="img-fluid"></a></div>
 					<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -296,7 +296,7 @@
 				<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Our Brands Product</div>
 				<div class="block">
 					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-2.png" alt="" class="img-fluid"></a></div>
+					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-2.png') }}" alt="" class="img-fluid"></a></div>
 					<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -312,7 +312,7 @@
 				<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Merchandise</div>
 				<div class="block">
 					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-3.png" alt="" class="img-fluid"></a></div>
+					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-3.png') }}" alt="" class="img-fluid"></a></div>
 					<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -354,7 +354,7 @@
 					<div class="block-label rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-2">Product of The Day</div>
 					<div class="block product-off-the-day">
 					<div class="block-col position-relative">
-						<div class="img h-100"><a href="detail-market.html" class="position-relative h-100"><img src="images/img-product-day.png" alt="" class="img-fluid h-100"></a></div>
+						<div class="img h-100"><a href="detail-market.html" class="position-relative h-100"><img src="{{ asset('images/img-product-day.png') }}" alt="" class="img-fluid h-100"></a></div>
 						<div class="block-text w-100 p-3">
 						<h6><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -371,7 +371,7 @@
 					<div class="block-label rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Books</div>
 					<div class="block">
 					<div class="block-col position-relative">
-						<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-1.png" alt="" class="img-fluid"></a></div>
+						<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-1.png') }}" alt="" class="img-fluid"></a></div>
 						<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -388,7 +388,7 @@
 					<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">UMKM</div>
 					<div class="block">
 					<div class="block-col position-relative">
-						<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-2.png" alt="" class="img-fluid"></a></div>
+						<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-2.png') }}" alt="" class="img-fluid"></a></div>
 						<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -405,7 +405,7 @@
 					<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Our Brands Product</div>
 					<div class="block">
 					<div class="block-col position-relative">
-						<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-2.png" alt="" class="img-fluid"></a></div>
+						<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-2.png') }}" alt="" class="img-fluid"></a></div>
 						<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -422,7 +422,7 @@
 					<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Merchandise</div>
 					<div class="block">
 					<div class="block-col position-relative">
-						<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/img-product-3.png" alt="" class="img-fluid"></a></div>
+						<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-3.png') }}" alt="" class="img-fluid"></a></div>
 						<div class="block-text w-100 p-3">
 						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
 						<div class="column">
@@ -456,7 +456,7 @@
 				<div class="col-md-4">
 				<div class="block">
 					<h4 class="subtitle text-uppercase text-white text-center mb-4 font-weight-bold">mom reseller</h4>
-					<div class="img mb-4"><img src="images/img-income-1.png" alt="" class="img-fluid"></div>
+					<div class="img mb-4"><img src="{{ asset('images/img-income-1.png') }}" alt="" class="img-fluid"></div>
 					<div class="button"><a href="#" class="rounded-pill link-gradient font-weight-bold d-flex align-items-center justify-content-center text-uppercase text-white text-center">daftar</a></div>
 				</div>
 				</div>
@@ -470,7 +470,7 @@
 				<div class="col-md-4">
 				<div class="block">
 					<h4 class="subtitle text-uppercase text-white text-center mb-4 font-weight-bold">mom freelancer</h4>
-					<div class="img mb-4"><img src="images/img-income-2.png" alt="" class="img-fluid"></div>
+					<div class="img mb-4"><img src="{{ asset('images/img-income-2.png') }}" alt="" class="img-fluid"></div>
 					<div class="button"><a href="#" class="rounded-pill link-gradient font-weight-bold d-flex align-items-center justify-content-center text-uppercase text-white text-center">daftar</a></div>
 				</div>
 				</div>
@@ -492,7 +492,7 @@
 				</ul>
 				<div class="tab-content" id="testi-tabContent">
 					<div class="tab-pane fade show active" id="testi-reseller" role="tabpanel" aria-labelledby="testi-reseller-tab">
-					<div class="img mb-4 text-center"><img src="images/img-income-1.png" alt="" class="img-fluid"></div>
+					<div class="img mb-4 text-center"><img src="{{ asset('images/img-income-1.png') }}" alt="" class="img-fluid"></div>
 					<div class="button-wrapper text-center">
 						<div class="button d-inline-block">
 						<a href="#" class="rounded-pill link-gradient font-weight-bold d-flex align-items-center justify-content-center text-uppercase text-white text-center">daftar</a>                      
@@ -508,7 +508,7 @@
 					</div>
 					</div>
 					<div class="tab-pane fade" id="testi-freelancer" role="tabpanel" aria-labelledby="testi-freelancer-tab">
-					<div class="img mb-4 text-center"><img src="images/img-income-2.png" alt="" class="img-fluid"></div>
+					<div class="img mb-4 text-center"><img src="{{ asset('images/img-income-2.png') }}" alt="" class="img-fluid"></div>
 					<div class="button-wrapper text-center">
 						<div class="button d-inline-block">
 						<a href="#" class="rounded-pill link-gradient font-weight-bold d-flex align-items-center justify-content-center text-uppercase text-white text-center">daftar</a>                      
@@ -525,7 +525,7 @@
 				<div class="testi-block">
 					<div class="row">
 					<div class="col-md-4 col-4">
-						<div class="user pt-3 rounded-circle"><img src="images/img-testi-1.png" alt="" class="img-fluid"></div> 
+						<div class="user pt-3 rounded-circle"><img src="{{ asset('images/img-testi-1.png') }}" alt="" class="img-fluid"></div> 
 					</div>
 					<div class="col-md-8 col-8">
 						<div class="testi">
@@ -539,7 +539,7 @@
 				<div class="testi-block">
 					<div class="row">
 					<div class="col-md-4">
-						<div class="user pt-3 rounded-circle"><img src="images/img-testi-2.png" alt="" class="img-fluid"></div> 
+						<div class="user pt-3 rounded-circle"><img src="{{ asset('images/img-testi-2.png') }}" alt="" class="img-fluid"></div> 
 					</div>
 					<div class="col-md-8">
 						<div class="testi">
@@ -563,22 +563,22 @@
 					<div class="slider multiple-items-2">
 					<div class="block text-center">
 						<div class="img d-flex align-items-center justify-content-center">
-						<img src="images/img-client-1.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-client-1.png') }}" alt="" class="img-fluid">
 						</div>                    
 					</div>
 					<div class="block text-center">
 						<div class="img d-flex align-items-center justify-content-center">
-						<img src="images/img-client-2.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-client-2.png') }}" alt="" class="img-fluid">
 						</div>                    
 					</div>
 					<div class="block text-center">
 						<div class="img d-flex align-items-center justify-content-center">
-						<img src="images/img-client-3.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-client-3.png') }}" alt="" class="img-fluid">
 						</div>                    
 					</div>
 					<div class="block text-center">
 						<div class="img d-flex align-items-center justify-content-center">
-						<img src="images/img-client-2.png" alt="" class="img-fluid">
+						<img src="{{ asset('images/img-client-2.png') }}" alt="" class="img-fluid">
 						</div>                    
 					</div>
 					</div>
@@ -602,7 +602,7 @@
 				<div class="sliders-wrapper">
 				<div class="slider multiple-items">
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-1.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Widya Safitri</div>
 						<div class="position">Bussiness Coach</div>
@@ -610,7 +610,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-2.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-2.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Farisah Sabrina</div>
 						<div class="position">Financial Expert</div>
@@ -618,7 +618,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-3.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-3.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Restiana Tobing</div>
 						<div class="position">Digital Marketing</div>
@@ -626,7 +626,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-4.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-4.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Widya Safitri</div>
 						<div class="position">Bussiness Coach</div>
@@ -634,7 +634,7 @@
 					</div>
 					</div>
 					<div class="block text-center">
-					<div class="img d-inline-block"><img src="images/img-people-1.png" alt="" class="img-fluid"></div>
+					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
 					<div class="after-img text-white mt-2">
 						<div class="name">Widya Safitri</div>
 						<div class="position">Bussiness Coach</div>

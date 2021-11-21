@@ -11,7 +11,8 @@ class ClassController extends Controller
 {
     public function index()
     {
-        # code...
+        $data['titlepage'] = 'Class';
+        return view('class.index',$data);
     }
     public function detail($id)
     {        
@@ -27,7 +28,7 @@ class ClassController extends Controller
         ]);
         // dd($data_course);
         $data['course'] = $data_course->data[0];
-        $data['titlepage'] = 'class';
+        $data['titlepage'] = 'Class Detail';
         return view('class.detail',$data);
     }
 }

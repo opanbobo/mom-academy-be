@@ -16,13 +16,6 @@
     <script src="{{ asset('scripts/modernizr.js') }}"></script>
   </head>
   <body>
-    {{-- <div class="overlay-bg">
-      <div class="d-flex justify-content-center">
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      </div>
-    </div> --}}
     <div id="wrapper">
 		<div id="top-desktop">
 			<div class="orange-top">
@@ -61,10 +54,10 @@
 				<div class="logo"><a href="{{ url('/')}}"><img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid"></a></div>
 				<div class="menus d-flex align-items-center">
 					<ul>
-					<li class="mr-4"><a href="detail-class.html">The Academy</a></li>
-					<li class="mr-4"><a href="get-income.html">Get Income</a></li>
-					<li class="mr-4"><a href="events.html">Events</a></li>
-					<li class="mr-4"><a href="market.html">Market Day</a></li>
+					<li class="mr-4 {{ Request::segment(1) == 'class' ? 'active' :'' }} "><a href="{{ url('class') }}">The Academy</a></li>
+					<li class="mr-4 {{ Request::segment(1) == 'get-income' ? 'active' :'' }} "><a href="{{ url('get-income') }}">Get Income</a></li>
+					<li class="mr-4 {{ Request::segment(1) == 'events' ? 'active' :'' }} "><a href="{{ url('events') }}">Events</a></li>
+					<li class="mr-4 {{ Request::segment(1) == 'market-day' ? 'active' :'' }} "><a href="{{ url('market-day') }}"">Market Day</a></li>
 					</ul>
 				</div>
 				</div>            

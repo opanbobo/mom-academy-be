@@ -34,8 +34,23 @@ Route::group(['prefix' => 'login'], function () {
 });
 
 
-// Profile
+// class
 Route::group(['prefix' => 'class'], function () {
     Route::get('/', 'ClassController@index');
     Route::get('/detail/{slug}', 'ClassController@detail');
+});
+
+// get income
+Route::group(['prefix' => 'get-income'], function () {
+    Route::get('/', 'IncomeController@index');    
+});
+
+// events
+Route::group(['prefix' => 'events'], function () {
+    Route::get('/', 'EventsController@index');    
+});
+
+// market day
+Route::group(['prefix' => 'market-day'], function () {
+    Route::get('/', 'MarketController@index');    
 });
