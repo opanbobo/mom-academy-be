@@ -54,10 +54,13 @@
 				<div class="logo"><a href="{{ url('/')}}"><img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid"></a></div>
 				<div class="menus d-flex align-items-center">
 					<ul>
+            <li class="mr-4 {{ Request::segment(1) == 'about-us' ? 'active' :'' }} "><a href="{{ url('about-us') }}">About Us</a></li>					
 					<li class="mr-4 {{ Request::segment(1) == 'class' ? 'active' :'' }} "><a href="{{ url('class') }}">The Academy</a></li>
 					<li class="mr-4 {{ Request::segment(1) == 'get-income' ? 'active' :'' }} "><a href="{{ url('get-income') }}">Get Income</a></li>
 					<li class="mr-4 {{ Request::segment(1) == 'events' ? 'active' :'' }} "><a href="{{ url('events') }}">Events</a></li>
+          <li class="mr-4 {{ Request::segment(1) == 'articles' ? 'active' :'' }} "><a href="{{ url('articles') }}">Article</a></li>
 					<li class="mr-4 {{ Request::segment(1) == 'market-day' ? 'active' :'' }} "><a href="{{ url('market-day') }}"">Market Day</a></li>
+          <li class="mr-4 {{ Request::segment(1) == 'join-us' ? 'active' :'' }} "><a href="#{{ url('join-us') }}"">Join Us</a></li>          
 					</ul>
 				</div>
 				</div>            

@@ -21,41 +21,40 @@
 		<div class="container">
 			<h1 class="title">The Academy</h1>
 			<div class="column mb-5">
-			<h4 class="text-center mb-4">Class</h4>
-			<div class="row">
-				@if(count($course)>0)
-                    @foreach ($course as $row)
-					<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-						<div class="block">
-							<div class="block-col position-relative">
-							<div class="img">
-								<a href="detail-class.html" class="thumb-video position-relative">
-									<img src="{{ $row->image }}" alt="" class="img-fluid">
-								{{-- <img src="{{ asset('images/img-class-1.png') }}" alt="" class="img-fluid"> --}}
-								<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
-									<h6>{{Str::words($row->course_name,5)}}</h6>
-									<div class="author">By {{ $row->expert_name}}</div>
-								</div>                        
-								</a>
-							</div>
-							<div class="block-text w-100 p-3">
-								<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">{{ \Carbon\Carbon::parse($row->start_date)->format('d') }} <span class="text-uppercase font-weight-normal">{{ \Carbon\Carbon::parse($row->start_date)->format('M') }}
-								</span></div>
-								<h6 class="d-none d-sm-block"><a href="{{url('class/detail/'.$row->course_id)}}">{{Str::words(ucwords(strtolower($row->course_name)),4)}}</a></h6>
-								<div class="column">
-								<div class="author d-none d-sm-block">By Widya Safitri</div>
-								<div class="btn-act text-center">
-									<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
-									<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
+				<h4 class="text-center mb-4">Class</h4>
+				<div class="row">
+					@if(count($course)>0)
+						@foreach ($course as $row)
+						<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+							<div class="block">
+								<div class="block-col position-relative">
+								<div class="img">
+									<a href="{{url('class/detail/'.$row->course_id)}}" class="thumb-video position-relative">
+										<img src="https://zonderstudio.com/img/course/{{ $row->image }}" alt="" class="img-fluid">								
+									<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
+										<h6>{{Str::words($row->course_name,5)}}</h6>
+										<div class="author">By {{ $row->expert_name}}</div>
+									</div>                        
+									</a>
 								</div>
+								<div class="block-text w-100 p-3">
+									<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">{{ \Carbon\Carbon::parse($row->start_date)->format('d') }} <span class="text-uppercase font-weight-normal">{{ \Carbon\Carbon::parse($row->start_date)->format('M') }}
+									</span></div>
+									<h6 class="d-none d-sm-block"><a href="{{url('class/detail/'.$row->course_id)}}">{{Str::words(ucwords(strtolower($row->course_name)),4)}}</a></h6>
+									<div class="column">
+									<div class="author d-none d-sm-block">By Widya Safitri</div>
+									<div class="btn-act text-center">
+										<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
+										<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
+									</div>
+									</div>
 								</div>
+								</div>       
 							</div>
-							</div>       
 						</div>
-					</div>
-					@endforeach
-				@endif
-			</div>
+						@endforeach
+					@endif
+				</div>
 			</div>
 			<div class="column mb-5">
 			<h4 class="text-center mb-4">Module</h4>
@@ -66,13 +65,14 @@
 							<div class="block">
 								<div class="block-module bg-orange">
 								<div class="img">
-									<a href="detail-module.html" class="position-relative">
-									<img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid">
+									<a href="#" class="position-relative">
+									{{-- <img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid"> --}}
+									<img src="https://zonderstudio.com/moma/public/img/ebook/{{ $row->thumbnail }}" alt="" class="img-fluid">
 									<div class="title-mobile d-block d-sm-none text-white text-uppercase position-absolute font-weight-bold p-3">{{ $row->title }}</div>
 									</a>
 								</div>
 								<div class="block-text w-100 p-3">
-									<h6 class="mb-4 d-none d-sm-block"><a href="detail-module.html">{{ $row->title }}</a></h6>
+									<h6 class="mb-4 d-none d-sm-block"><a href="#">{{ $row->title }}</a></h6>
 									<div class="btn-act">
 									<a href="#" class="rounded-pill mb-2 text-uppercase">Free</a>
 									<a href="#" class="rounded-pill text-uppercase">Lihat</a>
@@ -81,47 +81,8 @@
 								</div>       
 							</div>
 						</div>
-						@endforeach
-					@endif
-				{{-- <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="block">
-						<div class="block-module bg-yellow">
-						<div class="img">
-							<a href="detail-module.html" class="position-relative">
-							<img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid">
-							<div class="title-mobile text-white d-block d-sm-none text-uppercase position-absolute font-weight-bold p-3">MEMBUAT POT GANTUNG MACRAME</div>
-							</a>
-						</div>
-						<div class="block-text w-100 p-3">
-							<h6 class="mb-4 d-none d-sm-block"><a href="detail-module.html">MEMBUAT POT GANTUNG MACRAME</a></h6>
-							<div class="btn-act">
-							<a href="#" class="rounded-pill mb-2 text-uppercase">Free</a>
-							<a href="#" class="rounded-pill text-uppercase">Lihat</a>
-							</div>
-						</div>
-						</div>       
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="block">
-						<div class="block-module bg-blue">
-						<div class="img">
-							<a href="detail-module.html" class="position-relative">
-							<img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid">
-							<div class="title-mobile text-white d-block d-sm-none text-uppercase position-absolute font-weight-bold p-3">MEMBUAT POT GANTUNG MACRAME</div>
-							</a>
-						</div>
-						<div class="block-text w-100 p-3">
-							<h6 class="mb-4 d-none d-sm-block"><a href="detail-module.html">MEMBUAT POT GANTUNG MACRAME</a></h6>
-							<div class="btn-act">
-							<a href="#" class="rounded-pill mb-2 text-uppercase">Free</a>
-							<a href="#" class="rounded-pill text-uppercase">Lihat</a>
-							</div>
-						</div>
-						</div>       
-					</div>
-				</div>
-			</div> --}}
+					@endforeach
+				@endif				
 			</div>
 		</div>
 	</div>
@@ -133,78 +94,50 @@
 			</div>
 			<div class="col-md-10">
 				<div class="sliders-wrapper">
-				<div class="slider multiple-items">
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Widya Safitri</div>
-						<div class="position">Bussiness Coach</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
+					<div class="slider multiple-items">
+						@if ($expert)
+							@foreach ($expert as $row)														
+								<div class="block text-center">
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/img/expert/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="after-img text-white mt-2">
+										<div class="name">{{ $row->expert_name }}</div>
+										<div class="position">{{ $row->profesi }}</div>
+										<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
+									</div>
+								</div>
+							@endforeach						
+						@endif											
 					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-2.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Farisah Sabrina</div>
-						<div class="position">Financial Expert</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-3.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Restiana Tobing</div>
-						<div class="position">Digital Marketing</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-4.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Widya Safitri</div>
-						<div class="position">Bussiness Coach</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Widya Safitri</div>
-						<div class="position">Bussiness Coach</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-				</div>
 				</div>
 			</div>
 			</div>
 		</div>
 	</div>
-	{{-- <div id="events" class="section py-5">
+	<div id="events" class="section py-5">
 		<div class="container">
 			<div class="banner-ads text-center"><img src="{{ asset('images/dummy.jpg') }}" alt="" class="img-fluid"></div>
 			<h1 class="title text-center py-5 mt-3">MoM Events</h1>
 			<div class="column mb-5">
 			<div class="row">
-				@if(count($event)>0)
-                    @foreach ($event as $row)
+				@if(count($events)>0)
+                    @foreach ($events as $row)
 						<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 							<div class="block">
 								<div class="block-col position-relative">
 									<div class="img">
-										<a href="detail-events.html" class="position-relative">
-										<img src="{{ asset('images/img-event-1.png') }}" alt="" class="img-fluid">
+										<a href="{{ url('/events/detail/'.$row->event_id)}}" class="position-relative">
+										<img src="https://zonderstudio.com/img/event/{{ $row->image }}" alt="" class="img-fluid">
 										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">course_name
 											<h6>{{Str::words($row->event_name,5)}}</h6>
-											<div class="author">By Widya Safitri</div>
+											<div class="author">By {{$row->expert_name}}</div>
 										</div>  
 										</a>
 									</div>
 									<div class="block-text w-100 p-3">
-										<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">26 <span class="text-uppercase font-weight-normal">apr</span></div>
-										<h6 class="d-none d-sm-block"><a href="{{ url('/class/detail/'.$row->event_id)}}">{{Str::words($row->event_name,5)}}</a></h6>
+										<div class="date text-white text-center font-weight-bold d-flex align-items-center justify-content-center flex-column">{{ \Carbon\Carbon::parse($row->start_date)->format('d') }}  <span class="text-uppercase font-weight-normal">{{ \Carbon\Carbon::parse($row->start_date)->format('M') }} </span></div>
+										<h6 class="d-none d-sm-block"><a href="{{ url('/events/detail/'.$row->event_id)}}">{{Str::words($row->event_name,5)}}</a></h6>
 										<div class="column">
-										<div class="author d-none d-sm-block">By Widya Safitri</div>
+										<div class="author d-none d-sm-block">By {{$row->expert_name}}</div>
 										<div class="btn-act text-center">
 											<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
 											<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
@@ -219,7 +152,7 @@
 			</div>
 			</div>
 		</div>
-	</div> --}}
+	</div>
 	<div id="market" class="section py-5 position-relative">
 		<div class="container">
 			<div class="d-none d-sm-block">
@@ -535,7 +468,7 @@
 					</div>
 					<div class="col-md-8 col-8">
 						<div class="testi">
-						<p>"Berkat Mom, kegiatanku di rumah jadi lebih bervariasi, selain jadi Ibu Rumah Tangga, aku bisa punya penghasillan sendiri, Lho!" <span class="font-weight-bold d-block mt-2">- Andina, Reseller Mom</span</p>
+						<p>"Berkat Mom, kegiatanku di rumah jadi lebih bervariasi, selain jadi Ibu Rumah Tangga, aku bisa punya penghasillan sendiri, Lho!" <span class="font-weight-bold d-block mt-2">- Andina, Reseller Mom</span></p>
 						</div>
 					</div>
 					</div>
@@ -549,7 +482,7 @@
 					</div>
 					<div class="col-md-8">
 						<div class="testi">
-						<p>"Gabung di Mom memberiku kesempatan untuk tetap berkarya sambil nemenin si Kecil di rumah" <span class="font-weight-bold d-block mt-2">- Andina, Reseller Mom</span</p>
+						<p>"Gabung di Mom memberiku kesempatan untuk tetap berkarya sambil nemenin si Kecil di rumah" <span class="font-weight-bold d-block mt-2">- Andina, Reseller Mom</span></p>
 						</div>
 					</div>
 					</div>
@@ -606,48 +539,20 @@
 			</div>
 			<div class="col-md-9">
 				<div class="sliders-wrapper">
-				<div class="slider multiple-items">
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Widya Safitri</div>
-						<div class="position">Bussiness Coach</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
+					<div class="slider multiple-items">
+						@if ($moms)
+							@foreach ($moms as $row)														
+								<div class="block text-center">
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="after-img text-white mt-2">
+										<div class="name">{{ $row->name }}</div>
+										<div class="position">{{ $row->quote }}</div>
+										<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
+									</div>
+								</div>
+							@endforeach						
+						@endif	
 					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-2.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Farisah Sabrina</div>
-						<div class="position">Financial Expert</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-3.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Restiana Tobing</div>
-						<div class="position">Digital Marketing</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-4.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Widya Safitri</div>
-						<div class="position">Bussiness Coach</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-					<div class="block text-center">
-					<div class="img d-inline-block"><img src="{{ asset('images/img-people-1.png') }}" alt="" class="img-fluid"></div>
-					<div class="after-img text-white mt-2">
-						<div class="name">Widya Safitri</div>
-						<div class="position">Bussiness Coach</div>
-						<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
-					</div>
-					</div>
-				</div>
 				</div>
 			</div>
 			</div>

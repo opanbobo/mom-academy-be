@@ -33,6 +33,16 @@ Route::group(['prefix' => 'login'], function () {
     Route::post('/', 'LoginController@index')->name('login');   
 });
 
+// abou us
+Route::group(['prefix' => 'about-us'], function () {
+    Route::get('/', 'AboutController@index');    
+});
+
+// article
+Route::group(['prefix' => 'articles'], function () {
+    Route::get('/', 'ArticleController@index');
+    Route::get('/detail/{id}', 'ArticleController@detail');
+});
 
 // class
 Route::group(['prefix' => 'class'], function () {
@@ -48,6 +58,7 @@ Route::group(['prefix' => 'get-income'], function () {
 // events
 Route::group(['prefix' => 'events'], function () {
     Route::get('/', 'EventsController@index');    
+    Route::get('/detail/{id}', 'EventsController@detail');
 });
 
 // market day

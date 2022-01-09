@@ -1,366 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="{{ asset('css/404.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/general.css') }}">
+    <title>Page Not Found</title>
+    <style>      
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto:wght@100;300&display=swap");
+:root {
+  --button: #b3b3b3;
+  --button-color: #0a0a0a;
+  --shadow: #000;
+  --bg: #737373;
+  --header: #7a7a7a;
+  --color: #fafafa;
+  --lit-header: #e6e6e6;
+  --speed: 2s;
+}
+* {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+@property --swing-x {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+@property --swing-y {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--color);
+  perspective: 1200px;
+}
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--button);
+  color: var(--button-color);
+  padding: 1rem 4rem;
+  border-radius: 4rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.05rem;
+}
+p {
+  font-weight: 100;
+}
+h1 {
+  -webkit-animation: swing var(--speed) infinite alternate ease-in-out;
+          animation: swing var(--speed) infinite alternate ease-in-out;
+  font-size: clamp(5rem, 40vmin, 20rem);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  margin-bottom: 1rem;
+  letter-spacing: 1rem;
+  transform: translate3d(0, 0, 0vmin);
+  --x: calc(50% + (var(--swing-x) * 0.5) * 1%);
+  background: radial-gradient(var(--lit-header), var(--header) 45%) var(--x) 100%/200% 200%;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+h1:after {
+  -webkit-animation: swing var(--speed) infinite alternate ease-in-out;
+          animation: swing var(--speed) infinite alternate ease-in-out;
+  content: "404";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--shadow);
+  filter: blur(1.5vmin);
+  transform: scale(1.05) translate3d(0, 12%, -10vmin) translate(calc((var(--swing-x, 0) * 0.05) * 1%), calc((var(--swing-y) * 0.05) * 1%));
+}
+.cloak {
+  animation: swing var(--speed) infinite alternate-reverse ease-in-out;
+  height: 100%;
+  width: 100%;
+  transform-origin: 50% 30%;
+  transform: rotate(calc(var(--swing-x) * -0.25deg));
+  background: radial-gradient(40% 40% at 50% 42%, transparent, #000 35%);
+}
+.cloak__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+.cloak__container {
+  height: 250vmax;
+  width: 250vmax;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.info {
+  text-align: center;
+  line-height: 1.5;
+  max-width: clamp(16rem, 90vmin, 25rem);
+}
+.info > p {
+  margin-bottom: 3rem;
+}
+@-webkit-keyframes swing {
+  0% {
+    --swing-x: -100;
+    --swing-y: -100;
+  }
+  50% {
+    --swing-y: 0;
+  }
+  100% {
+    --swing-y: -100;
+    --swing-x: 100;
+  }
+}
+@keyframes swing {
+  0% {
+    --swing-x: -100;
+    --swing-y: -100;
+  }
+  50% {
+    --swing-y: 0;
+  }
+  100% {
+    --swing-y: -100;
+    --swing-x: 100;
+  }
+}
+    </style>
 </head>
 <body>
-    {{-- <div class="container"> --}}
-        <!-- Navbar Section -->
-        <header>
-            <nav class="navbar navbar-expand-lg fixed-top">
-                <div class="navbar-brand d-flex">
-                    <div class="mob-category d-lg-none" onclick="openNav()">
-                        <img src="{{ asset('images/category/category.png') }}" alt="ic-category">
-                    </div>
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('images/logo/gojek.png') }}" alt="logo">
-                    </a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <div class="category dropdown">
-                                <div class="dropdown-toggle" id="dropdown-category" data-toggle="dropdown">
-                                    <img src="{{ asset('images/category/category.png') }}" alt="ic-category">
-                                    <span>Category</span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <div class="item-title d-flex">
-                                        <p>Category</p>
-                                    </div>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Accessories
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Gadget
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Laptop / Desktop
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Monitor
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Network
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Peripheral Equipment
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Rack System
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Printer
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Storage External
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Storage Internal
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Voices
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        RAM
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Software
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        IT Services
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('product/list') }}">
-                                        Monitoring
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="nav-item mr-auto d-none d-sm-block d-md-block">
-                            <form class="form-inline">
-                                <div class="input-group">
-                                    <i class="fas fa-search"></i>
-                                    <input type="text" class="form-control" placeholder="Find Gadget">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div id="rightnav">
-                    <div class="nav-item">
-    
-                        <div class="notification dropdown">
-                            <i class="fas fa-bell dropdown-toggle" id="dropdown-notif" data-toggle="dropdown"></i>
-                            <div class="dropdown-menu">
-                                <div class="item-title d-flex">
-                                    <p>Notification</p>
-                                </div>
-                                <a class="dropdown-item" href="{{ url('order/tracking') }}">
-                                    <p class="title">
-                                        <span>Order Arrived</span>
-                                        <span>&bull;</span>
-                                        <span>10.00</span>
-                                    </p>
-                                    <p class="content">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur.
-                                    </p>
-                                </a>
-                                <a class="dropdown-item" href="{{ url('order/tracking') }}">
-                                    <p class="title">
-                                        <span>Order Completed</span>
-                                        <span>&bull;</span>
-                                        <span>13.25</span>
-                                    </p>
-                                    <p class="content">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptate assumenda voluptas aut magni.
-                                    </p>
-                                </a>
-                                <a class="dropdown-item" href="{{ url('order/tracking') }}">
-                                    <p class="title">
-                                        <span>Order Decline</span>
-                                        <span>&bull;</span>
-                                        <span>17.40</span>
-                                    </p>
-                                    <p class="content">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptate assumenda voluptas aut magni.
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-    
-                        <div class="cart dropdown">
-                            <i class="fas fa-shopping-cart dropdown-toggle" id="dropdown-cart" data-toggle="dropdown"></i>
-                            <div class="dropdown-menu">
-                                <div class="item-title d-flex">
-                                    <p>Cart</p>
-                                    <a href="../order/cart/index.html">
-                                        <span>Detail</span> 
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                                <a class="dropdown-item" href="{{ url('order/cart') }}">
-                                    <div class="media">
-                                        <img src="{{ asset('images/product/recommendation/samsung.png') }}" alt="img-cart">
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Samsung Galaxy J8 SM-J810FZKATUR 32GB Black</h5>
-                                            <p class="item-price">Rp 5.000.000</p>
-                                            <p class="item-total">(Item 1x)</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item" href="{{ url('order/cart') }}">
-                                    <div class="media">
-                                        <img src="{{ asset('images/product/recommendation/macbook.png') }}" alt="img-cart">
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Macbook Pro 2020 - Space Grey </h5>
-                                            <p class="item-price">Rp 20.000.000</p>
-                                            <p class="item-total">(Item 1x)</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-    
-                        <div class="separator"></div>
-    
-                        <div class="profile dropdown">
-                            <div class="profile-trigger dropdown-toggle" id="dropdown-profile" data-toggle="dropdown">
-                            <img src="{{ asset('images/icon/user.png') }}" alt="user">
-                                <button class="btn btn-secondary" type="button">
-                                    Jessy
-                                </button>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="../profile/main/index.html">
-                                    Profile
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                                <a class="dropdown-item" href="../login2/login2.html">
-                                    Log Out
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Sidebar on Mobile Screen -->
-            <div id="mySidenav" class="sidenav">
-                <div class="sidebar-title">
-                    <img src="{{ asset('images/category/category.png') }}" alt="category">
-                    <h3>Category</h3>
-                </div>
-                <div class="divider"></div>
-                <div class="menu-content">
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/accessories.png') }}" alt="ic-accessories">
-                        </div>
-                        <span>Accessories</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/gadget.png') }}" alt="ic-gadget">
-                        </div>
-                        <span>Gadget</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/laptop.png') }}" alt="ic-category">
-                        </div>
-                        <span>Laptop/Desktop</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/monitor.png') }}" alt="ic-category">
-                        </div>
-                        <span>Monitor</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/network.png') }}" alt="ic-category">
-                        </div>
-                        <span>Network</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/peripherals.png') }}" alt="ic-category">
-                        </div>
-                        <span>Peripheral Equipment</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/rack.png') }}" alt="ic-category">
-                        </div>
-                        <span>Rack System</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/printer.png') }}" alt="ic-category">
-                        </div>
-                        <span>Printer</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/storage-external.png') }}" alt="ic-category">
-                        </div>
-                        <span>Storage External</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/storage-internal.png') }}" alt="ic-category">
-                        </div>
-                        <span>Storage Internal</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/voices.png') }}" alt="ic-category">
-                        </div>
-                        <span>Voice</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/ram.png') }}" alt="ic-category">
-                        </div>
-                        <span>RAM</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/software.png') }}" alt="ic-category">
-                        </div>
-                        <span>Software</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/services.png') }}" alt="ic-services">
-                        </div>
-                        <span>IT Services</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="../product/list/specific_category/index.html">
-                        <div class="img-box">
-                            <img src="{{ asset('images/category/monitoring.png') }}" alt="ic-monitoring">
-                        </div>
-                        <span>Monitoring</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
-        </header>
-        <!-- End Navbar Section -->
-    {{-- </div> --}}
-        <!-- Main Content -->
-        <main class="content">
-            <div class="main-area">
-                <img src="{{ asset('images/condition/page-not-found.png') }}" alt="page-not-found">
-                <h2>Error 404</h2>
-                <p>Page Not Found</p>
-            </div>
-        </main>
-
-        
-    
-
-    <footer>
-        <p><strong>© 2020 Gojek</strong></p>
-        <p>
-            Gojek is a trademark of PT Aplikasi Karya Anak Bangsa. 
-            Registered in the Directorate General of Intellectual Property of the Republic of Indonesia.
-        </p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-
+    <h1>404</h1>
+    <div class="cloak__wrapper">
+      <div class="cloak__container">
+        <div class="cloak"></div>
+      </div>
+    </div>
+    <div class="info">
+      <h2>We can't find that page</h2>
+      <p>&nbsp;</p><a href="https://jhey.dev" target="_blank" rel="noreferrer noopener">Home</a>
+    </div>
 </body>
 
 </html>
