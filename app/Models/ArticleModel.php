@@ -12,10 +12,10 @@ class ArticleModel extends Model
 
     public function db_lists($param)
     {
-        $query = DB::table($this->table . ' as prim');                      
-        $query->limit($param['limit']);
-        $result = $query->get();        
-        return $result;
+        $query = DB::table($this->table)->paginate(12);               
+        // $query->limit($param['limit']);
+        // $result = $query->get();        
+        return $query;
     }
 
     public function db_detail($article_id)

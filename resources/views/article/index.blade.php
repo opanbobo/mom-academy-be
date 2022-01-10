@@ -52,226 +52,71 @@
 									@endforeach
 								@endif          
 							</div>
+							<div class="row">
+								<div class="col-12">
+									{{ $results->links() }}
+								</div>
+							</div>
 						</div>
 					</div>
 					<div id="artikelbaru" class="tab-pane fade">
 						<div class="column mb-5">       
-						<div class="row">
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="#">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
+							<div class="row">
+								@if(count($results)>0)
+									@foreach ($results as $row)
+										<div class="col-md-3 mb-5">
+											<div class="block">
+												<div class="block-col position-relative">
+													<div class="img">
+														<a href="{{ url('articles/detail/'.$row->article_id) }}" class="position-relative"><img src="https://zonderstudio.com/img/article/{{ $row->image }}" alt="" class="img-fluid"></a>
+													</div>
+													<div class="block-text w-100 p-3">
+														<div class="date-post mb-2">{{ \Carbon\Carbon::parse($row->created_at)->format('d F Y') }}</div>
+														<div class="title-post">
+															<a href="{{ url('articles/detail/'.$row->article_id) }}">{{ $row->title }}</a>
+														</div>
+													</div>
+												</div>       
+											</div>
+										</div>
+									@endforeach
+								@endif          
+							</div>
+							<div class="row">
+								<div class="col-12">
+									{{ $results->links() }}
 								</div>
-								</div>       
 							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-						</div>
 						</div>
 					</div>
 					<div id="artikellain" class="tab-pane fade">
 						<div class="column mb-5">       
-						<div class="row">
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="#">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
+							<div class="row">
+								@if(count($results)>0)
+									@foreach ($results as $row)
+										<div class="col-md-3 mb-5">
+											<div class="block">
+												<div class="block-col position-relative">
+													<div class="img">
+														<a href="{{ url('articles/detail/'.$row->article_id) }}" class="position-relative"><img src="https://zonderstudio.com/img/article/{{ $row->image }}" alt="" class="img-fluid"></a>
+													</div>
+													<div class="block-text w-100 p-3">
+														<div class="date-post mb-2">{{ \Carbon\Carbon::parse($row->created_at)->format('d F Y') }}</div>
+														<div class="title-post">
+															<a href="{{ url('articles/detail/'.$row->article_id) }}">{{ $row->title }}</a>
+														</div>
+													</div>
+												</div>       
+											</div>
+										</div>
+									@endforeach
+								@endif          
+							</div>
+							<div class="row">
+								<div class="col-12">
+									{{ $results->links() }}
 								</div>
-								</div>       
 							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-							<div class="col-md-3 mb-5">
-							<div class="block">
-								<div class="block-col position-relative">
-								<div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-								<div class="block-text w-100 p-3">
-									<div class="date-post mb-2">1 Desember 2021</div>
-									<div class="title-post">
-									<a href="article-detail.html">MOMA mengadakan pelatihan khusus ibu-ibu muda pada Event Tahunan</a>
-									</div>
-								</div>
-								</div>       
-							</div>
-							</div>
-						</div>
 						</div>
 					</div>
 				</div>
