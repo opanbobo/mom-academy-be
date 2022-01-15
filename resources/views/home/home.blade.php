@@ -30,7 +30,7 @@
 								<div class="block-col position-relative">
 								<div class="img">
 									<a href="{{url('class/detail/'.$row->course_id)}}" class="thumb-video position-relative">
-										<img src="https://zonderstudio.com/img/course/{{ $row->image }}" alt="" class="img-fluid">								
+										<img src="https://zonderstudio.com/moma/public/img/course/{{ $row->image }}" alt="" class="img-fluid">								
 									<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
 										<h6>{{Str::words($row->course_name,5)}}</h6>
 										<div class="author">By {{ $row->expert_name}}</div>
@@ -65,14 +65,14 @@
 							<div class="block">
 								<div class="block-module bg-orange">
 								<div class="img">
-									<a href="#" class="position-relative">
+									<a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank" class="position-relative">
 									{{-- <img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid"> --}}
 									<img src="https://zonderstudio.com/moma/public/img/ebook/{{ $row->thumbnail }}" alt="" class="img-fluid">
 									<div class="title-mobile d-block d-sm-none text-white text-uppercase position-absolute font-weight-bold p-3">{{ $row->title }}</div>
 									</a>
 								</div>
 								<div class="block-text w-100 p-3">
-									<h6 class="mb-4 d-none d-sm-block"><a href="#">{{ $row->title }}</a></h6>
+									<h6 class="mb-4 d-none d-sm-block"><a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank">{{ $row->title }}</a></h6>
 									<div class="btn-act">
 									<a href="#" class="rounded-pill mb-2 text-uppercase">Free</a>
 									<a href="#" class="rounded-pill text-uppercase">Lihat</a>
@@ -98,7 +98,7 @@
 						@if ($expert)
 							@foreach ($expert as $row)														
 								<div class="block text-center">
-									<div class="img d-inline-block"><img src="https://zonderstudio.com/img/expert/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/moma/public/img/expert/{{ $row->image }}" alt="" class="img-fluid"></div>
 									<div class="after-img text-white mt-2">
 										<div class="name">{{ $row->expert_name }}</div>
 										<div class="position">{{ $row->profesi }}</div>
@@ -126,7 +126,7 @@
 								<div class="block-col position-relative">
 									<div class="img">
 										<a href="{{ url('/events/detail/'.$row->event_id)}}" class="position-relative">
-										<img src="https://zonderstudio.com/img/event/{{ $row->image }}" alt="" class="img-fluid">
+										<img src="https://zonderstudio.com/moma/public/img/event/{{ $row->image }}" alt="" class="img-fluid">
 										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">course_name
 											<h6>{{Str::words($row->event_name,5)}}</h6>
 											<div class="author">By {{$row->expert_name}}</div>
@@ -543,7 +543,7 @@
 						@if ($moms)
 							@foreach ($moms as $row)														
 								<div class="block text-center">
-									<div class="img d-inline-block"><img src="https://zonderstudio.com/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/moma/public/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
 									<div class="after-img text-white mt-2">
 										<div class="name">{{ $row->name }}</div>
 										<div class="position">{{ $row->quote }}</div>

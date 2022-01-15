@@ -18,7 +18,7 @@
 							<div class="block-col position-relative">
 								<div class="img">
 									<a href="{{ url('/events/detail/'.$row->event_id)}}" class="position-relative">
-									<img src="https://zonderstudio.com/img/event/{{ $row->image }}" alt="" class="img-fluid">
+									<img src="https://zonderstudio.com/moma/public/img/event/{{ $row->image }}" alt="" class="img-fluid">
 									<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">course_name
 										<h6>{{Str::words($row->event_name,5)}}</h6>
 										<div class="author">By {{$row->expert_name}}</div>

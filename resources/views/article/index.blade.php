@@ -38,7 +38,7 @@
 											<div class="block">
 												<div class="block-col position-relative">
 													<div class="img">
-														<a href="{{ url('articles/detail/'.$row->article_id) }}" class="position-relative"><img src="https://zonderstudio.com/img/article/{{ $row->image }}" alt="" class="img-fluid"></a>
+														<a href="{{ url('articles/detail/'.$row->article_id) }}" class="position-relative"><img src="https://zonderstudio.com/moma/public/img/article/{{ $row->image }}" alt="" class="img-fluid"></a>
 													</div>
 													<div class="block-text w-100 p-3">
 														<div class="date-post mb-2">{{ \Carbon\Carbon::parse($row->created_at)->format('d F Y') }}</div>

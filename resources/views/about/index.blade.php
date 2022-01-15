@@ -30,7 +30,7 @@
                     @if ($results)
 							@foreach ($results as $row)														
 								<div class="block text-center">
-									<div class="img d-inline-block"><img src="https://zonderstudio.com/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/moma/public/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
 									<div class="after-img text-white mt-2">
 										<div class="name">{{ $row->name }}</div>
 										<div class="position">{{ $row->quote }}</div>

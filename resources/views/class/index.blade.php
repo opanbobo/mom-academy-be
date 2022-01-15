@@ -68,7 +68,7 @@
 									<div class="block-col position-relative">
 									<div class="img">
 										<a href="{{url('class/detail/'.$row->course_id)}}" class="thumb-video position-relative">
-											<img src="https://zonderstudio.com/img/course/{{ $row->image }}" alt="" class="img-fluid">								
+											<img src="https://zonderstudio.com/moma/public/img/course/{{ $row->image }}" alt="" class="img-fluid">								
 										<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">
 											<h6>{{Str::words($row->course_name,5)}}</h6>
 											<div class="author">By {{ $row->expert_name}}</div>
