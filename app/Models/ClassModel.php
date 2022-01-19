@@ -9,8 +9,9 @@ class ClassModel extends Model
 {
     protected $table = 'course';
     protected $moms = 'moms';
+    protected $module = 'module_ebook';
 
-    public function db_lists($param)
+    public function db_lists_class($param)
     {
         $query = DB::table($this->table . ' as prim');        
         $query->select('prim.*','ex.expert_name');
@@ -18,8 +19,14 @@ class ClassModel extends Model
         $query->limit($param['limit']);
         $result = $query->get();        
         return $result;
+    }    
+    public function db_lists_module($param)
+    {
+        $query = DB::table($this->module);                
+        $query->limit($param['limit']);
+        $result = $query->get();        
+        return $result;
     }
-
     public function db_detail($id)
     {
         $query = DB::table($this->table . ' as prim');      

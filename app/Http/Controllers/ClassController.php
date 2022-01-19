@@ -11,10 +11,13 @@ class ClassController extends Controller
 {
     public function index(ClassModel $model)
     {
-        $class = $model->db_lists(['limit' => 12]);
+        $class = $model->db_lists_class(['limit' => 12]);
+        $module = $model->db_lists_module(['limit' => 12]);
         $moms   = $model->db_mom_lists(['limit' => 6]);
-        
+        $moms   = $model->db_mom_lists(['limit' => 6]);
+                
         $data['moms'] = $moms;
+        $data['module'] = $module;
         $data['results'] = $class;
         $data['titlepage'] = 'Class';
         return view('class.index',$data);

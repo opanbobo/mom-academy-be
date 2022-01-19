@@ -52,16 +52,13 @@
             </div>
           </div>
         </form>          
-        <div class="column-list border-top pt-4">
+        <div id="academy" class="section py-5">
 			<div class="container">
-				<div class="sortby">
-					<div class="text-right font-weight-bold mb-3">
-						<span class="text-uppercase">sort by:</span> <span>Terpopuler</span>
-					</div>
-				</div>
+				<h1 class="title">The Academy</h1>
 				<div class="column mb-5">
+					<h4 class="text-center mb-4">Class</h4>
 					<div class="row">
-						@if ($results)
+						@if(count($results)>0)
 							@foreach ($results as $row)
 							<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 								<div class="block">
@@ -91,9 +88,37 @@
 								</div>
 							</div>
 							@endforeach
-						@endif                
+						@endif
 					</div>
-              	</div>
+				</div>
+				<div class="column mb-5">
+				<h4 class="text-center mb-4">Module</h4>
+				<div class="row">
+					@if(count($module)>0)
+						@foreach ($module as $row)
+							<div class="col-md-6 col-lg-4 mb-5 ">
+								<div class="block">
+									<div class="block-module bg-orange">
+									<div class="img">
+										<a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank" class="position-relative">
+										{{-- <img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid"> --}}
+										<img src="https://zonderstudio.com/moma/public/img/ebook/{{ $row->thumbnail }}" alt="" class="img-fluid">
+										<div class="title-mobile d-block d-sm-none text-white text-uppercase position-absolute font-weight-bold p-3">{{ $row->title }}</div>
+										</a>
+									</div>
+									<div class="block-text w-100 p-3">
+										<h6 class="mb-4 d-none d-sm-block"><a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank">{{ $row->title }}</a></h6>
+										<div class="btn-act">
+										<a href="#" class="rounded-pill mb-2 text-uppercase">Free</a>
+										<a href="#" class="rounded-pill text-uppercase">Lihat</a>
+										</div>
+									</div>
+									</div>       
+								</div>
+							</div>
+						@endforeach
+					@endif				
+				</div>
 			</div>
 		</div>
 	</div>

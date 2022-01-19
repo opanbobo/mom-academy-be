@@ -34,7 +34,10 @@
 									<div class="after-img text-white mt-2">
 										<div class="name">{{ $row->name }}</div>
 										<div class="position">{{ $row->quote }}</div>
-										<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
+										<div class="d-flex align-items-center justify-content-center sosmed-profile my-4">
+                      <a href="https://www.instagram.com/{{ $row->link_instagram }}" class="ig"><i class="fab fa-instagram"></i></a>
+                      <a href="https://wa.me/#" class="wa"><i class="fab fa-whatsapp"></i></a>
+                    </div>
 									</div>
 								</div>
 							@endforeach						
