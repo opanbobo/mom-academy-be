@@ -12,7 +12,7 @@ class ArticleModel extends Model
 
     public function db_lists($param)
     {
-        $query = DB::table($this->table)->paginate(12);               
+        $query = DB::table($this->table)->paginate($param['limit']);               
         // $query->limit($param['limit']);
         // $result = $query->get();        
         return $query;

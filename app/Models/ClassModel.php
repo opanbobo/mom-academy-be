@@ -17,14 +17,14 @@ class ClassModel extends Model
         $query->select('prim.*','ex.expert_name');
         $query->leftJoin('expert as ex','prim.speaker', '=', 'ex.expert_id');                
         $query->limit($param['limit']);
-        $result = $query->get();        
+        $result = $query->get();       
         return $result;
     }    
     public function db_lists_module($param)
     {
         $query = DB::table($this->module);                
         $query->limit($param['limit']);
-        $result = $query->get();        
+        $result = $query->paginate($param['limit']);    
         return $result;
     }
     public function db_detail($id)

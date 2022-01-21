@@ -20,7 +20,7 @@ class ArticleController extends Controller
     public function index(ArticleModel $model)
     {                
         $param =  [
-            'limit' => 12
+            'limit' => 6
         ];
 
         $articles = $model->db_lists($param); 

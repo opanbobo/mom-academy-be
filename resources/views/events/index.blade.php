@@ -43,6 +43,11 @@
 					@endforeach
 				@endif              
             </div>
+			<div class="row">
+				<div class="col-12 mx-auto mt-5">
+					{{ $results->links() }}
+				</div>
+			</div>
           </div>
         </div>
       </div>

@@ -9,11 +9,11 @@
                 <div class="row">
                   <div class="col-md-8 d-flex align-items-center">
                     <div class="submenux w-100 text-center">
-                      <ul class="d-inline-block nav nav-tabs border-bottom-0">
+                      {{-- <ul class="d-inline-block nav nav-tabs border-bottom-0">
                         <li class="active"><a data-toggle="tab" href="#wajibtau">Wajib tau</a></li>
                         <li><a data-toggle="tab" href="#artikelbaru">Artikel Baru</a></li>
                         <li><a data-toggle="tab" href="#artikellain">Artikel Lainnya</a></li>
-                      </ul>
+                      </ul> --}}
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -53,7 +53,7 @@
 								@endif          
 							</div>
 							<div class="row">
-								<div class="col-12">
+								<div class="col-12 mx-auto">
 									{{ $results->links() }}
 								</div>
 							</div>

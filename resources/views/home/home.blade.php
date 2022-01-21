@@ -61,13 +61,14 @@
 			<div class="row">
 				@if(count($module)>0)
                     @foreach ($module as $row)
-						<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+						{{-- <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 							<div class="block">
 								<div class="block-module bg-orange">
 								<div class="img">
 									<a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank" class="position-relative">
-									{{-- <img src="{{ asset('images/img-module.png') }}" alt="" class="img-fluid"> --}}
-									<img src="https://zonderstudio.com/moma/public/img/ebook/{{ $row->thumbnail }}" alt="" class="img-fluid">
+									<div class="img-wrap-module">
+										<img src="https://zonderstudio.com/moma/public/img/ebook/{{ $row->thumbnail }}" alt="" class="img-fluid">
+									</div>
 									<div class="title-mobile d-block d-sm-none text-white text-uppercase position-absolute font-weight-bold p-3">{{ $row->title }}</div>
 									</a>
 								</div>
@@ -78,6 +79,29 @@
 									<a href="#" class="rounded-pill text-uppercase">Lihat</a>
 									</div>
 								</div>
+								</div>       
+							</div>
+						</div> --}}
+
+						<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+							<div class="block">
+								<div class="block-col block-module position-relative bg-orange">
+									<div class="img">
+										<a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank" class="position-relative">
+											<img src="https://zonderstudio.com/moma/public/img/ebook/{{ $row->thumbnail }}" alt="" class="img-fluid">
+										</a>
+									</div>
+									<div class="block-text w-100 p-3">
+										<h6 class="mb-4 d-none d-sm-block"><a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank">{{ $row->title }}</a></h6>
+										<div class="btn-act">
+										@if ($row->price == 0)
+											<a href="#" class="rounded-pill mb-2 text-uppercase">Free</a>
+										@else
+										<a href="#" class="rounded-pill mb-2 text-uppercase">Rp. {{number_format($row->price)}}</a>
+										@endif											
+										<a href="https://zonderstudio.com/moma/public/file/ebook/{{$row->file_ebook}}" target="_blank" class="rounded-pill text-uppercase">Lihat</a>
+										</div>
+									</div>
 								</div>       
 							</div>
 						</div>

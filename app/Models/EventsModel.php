@@ -15,8 +15,8 @@ class EventsModel extends Model
         $query = DB::table($this->table . ' as prim');        
         $query->select('prim.*','ex.expert_name');
         $query->leftJoin('expert as ex','prim.speaker', '=', 'ex.expert_id');                
-        $query->limit($param['limit']);
-        $result = $query->get();        
+        // $query->limit($param['limit']);
+        $result = $query->paginate($param['limit']);     
         return $result;
     }
 
