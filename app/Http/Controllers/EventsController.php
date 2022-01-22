@@ -11,7 +11,10 @@ class EventsController extends Controller
 {
     public function index(EventsModel $model)
     {
-        $events = $model->db_lists(['limit' => 1]);
+        $limit = 9;
+
+        $param['limit'] = $limit;
+        $events = $model->db_lists($param);
         // dd($events);
         $data['results'] = $events;
         $data['titlepage'] = 'Events';

@@ -9,16 +9,44 @@ use App\Models\ClassModel;
 
 class ClassController extends Controller
 {
-    public function index(ClassModel $model)
+    public function index(ClassModel $model, Request $request)
     {
-        $class = $model->db_lists_class(['limit' => 6]);
-        $module = $model->db_lists_module(['limit' => 6]);
+        $academyType = $request->input('data_type');
+
+        //paging
+        $limit = 9;        
+        $page = $request->input('page') ?: 1;        
+        $offset = $limit * ($page - 1);
+        $custompath = '/class';
+        $param['offset'] = $offset;
+        $param['limit'] = $limit;
+                
+        if ($academyType) {
+            if ($academyType == 'class') {
+                $data['title'] = 'Class';
+                $result = $model->db_lists_class($param);
+                $custompath = '/class?data_type=class';
+            }else{
+                $data['title'] = 'Module';
+                $result = $model->db_lists_module($param);
+                $custompath = '/class?data_type=module';
+            }                    
+        }else{
+            $data['title'] = 'Class';
+            $result = $model->db_lists_class($param);
+        }        
+        
+        // dd($result);
+        $path = url('/') . $custompath;
+        $paginator = new \Illuminate\Pagination\LengthAwarePaginator($result['data'], $result['count'], $limit, $page);
+        $paginator = $paginator->withPath($path);
+        // dd($paginator);
         $moms   = $model->db_mom_lists(['limit' => 6]);
-        $moms   = $model->db_mom_lists(['limit' => 6]);
-                        
+
         $data['moms'] = $moms;
-        $data['module'] = $module;
-        $data['results'] = $class;
+        // $data['module'] = $module;
+        $data['results'] = $result['data'];     
+        $data['paginator'] = $paginator;   
         $data['titlepage'] = 'Class';
         return view('class.index',$data);
     }

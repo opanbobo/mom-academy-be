@@ -1,4 +1,5 @@
 var base_url = window.location.origin + '/';
+var selectClassCategory = $('#select-category');
 
 $('#loginForm').submit(function(e) {
     var token = $(this).attr('content');
@@ -50,3 +51,8 @@ function register(data,token) {
         }
     });
 }
+
+selectClassCategory.change(function () { //voucher single
+    var _val = $(this).val();    
+    window.location = base_url+'class?data_type='+_val
+})

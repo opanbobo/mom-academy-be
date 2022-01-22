@@ -7,7 +7,9 @@
           <div class="row">
             <div class="col-md-12">
               <h1 class="title-market mb-3">{{ $results->title }}</h1>
-              <div class="img mb-5 text-center"><img src="https://zonderstudio.com/img/article/{{ $results->image }}" alt="" class="img-fluid"></div>
+              <div class="img mb-5 text-center">
+                <img src="https://zonderstudio.com/moma/public/img/article/{{ $results->image }}" alt="" class="img-fluid">
+              </div>
             </div>
             <div class="col-md-12">
               <div class="market-right-wrapper">                    
