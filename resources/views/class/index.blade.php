@@ -34,7 +34,7 @@
                   <div class="col-md-3">
                     <div class="form-group">
                       <select class="form-control rounded-pill" id="select-category" name="category">
-                        <option select hidden value="">Category</option>
+                        <option select hidden value="">Choose Category</option>
                         <option value="class">Class</option>
                         <option value="module">Module</option>
                         {{-- <option>3</option>
@@ -44,7 +44,7 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <button class="rounded-pill font-weight-bold btn-search text-white w-100"><i class="fa fa-search" aria-hidden="true"></i> Cari <span>Sekarang</span></button>
+                    <button id="academyBtn" class="rounded-pill font-weight-bold btn-search text-white w-100"><i class="fa fa-search" aria-hidden="true"></i> Cari <span>Sekarang</span></button>
                   </div>
                 </div>
               </div>

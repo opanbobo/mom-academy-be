@@ -11,7 +11,7 @@ class ClassController extends Controller
 {
     public function index(ClassModel $model, Request $request)
     {
-        $academyType = $request->input('data_type');
+        $academyType = $request->input('category');
 
         //paging
         $limit = 9;        
@@ -25,11 +25,11 @@ class ClassController extends Controller
             if ($academyType == 'class') {
                 $data['title'] = 'Class';
                 $result = $model->db_lists_class($param);
-                $custompath = '/class?data_type=class';
+                $custompath = '/class?category=class';
             }else{
                 $data['title'] = 'Module';
                 $result = $model->db_lists_module($param);
-                $custompath = '/class?data_type=module';
+                $custompath = '/class?category=module';
             }                    
         }else{
             $data['title'] = 'Class';

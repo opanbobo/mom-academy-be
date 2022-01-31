@@ -52,7 +52,13 @@ function register(data,token) {
     });
 }
 
-selectClassCategory.change(function () { //voucher single
-    var _val = $(this).val();    
-    window.location = base_url+'class?data_type='+_val
+// selectClassCategory.change(function () { //voucher single
+//     var _val = $(this).val();    
+//     window.location = base_url+'class?data_type='+_val
+// })
+$('#academyBtn').click(function() {
+    var _val = selectClassCategory.val()  
+    if (_val === '') {
+        return false
+    }  
 })

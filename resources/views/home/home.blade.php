@@ -126,9 +126,24 @@
 									<div class="after-img text-white mt-2">
 										<div class="name">{{ $row->expert_name }}</div>
 										<div class="position">{{ $row->profesi }}</div>
-										<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
+										{{-- <div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div> --}}
+										<div class="d-flex align-items-center justify-content-center sosmed-profile my-4">
+											<a href="https://www.instagram.com/{{ $row->link_instagram }}" class="ig"><i class="fab fa-instagram"></i></a>
+											<a href="https://wa.me/#" class="wa"><i class="fab fa-whatsapp"></i></a>
+										</div>
 									</div>
 								</div>
+								{{-- <div class="block text-center">
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/moma/public/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="after-img text-white mt-2">
+										<div class="name">{{ $row->name }}</div>
+										<div class="position">{{ $row->quote }}</div>
+										<div class="d-flex align-items-center justify-content-center sosmed-profile my-4">
+											<a href="https://www.instagram.com/{{ $row->link_instagram }}" class="ig"><i class="fab fa-instagram"></i></a>
+											<a href="https://wa.me/#" class="wa"><i class="fab fa-whatsapp"></i></a>
+										</div>
+									</div>
+								</div> --}}
 							@endforeach						
 						@endif											
 					</div>
@@ -566,14 +581,25 @@
 					<div class="slider multiple-items">
 						@if ($moms)
 							@foreach ($moms as $row)														
-								<div class="block text-center">
+								{{-- <div class="block text-center">
 									<div class="img d-inline-block"><img src="https://zonderstudio.com/moma/public/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
 									<div class="after-img text-white mt-2">
 										<div class="name">{{ $row->name }}</div>
 										<div class="position">{{ $row->quote }}</div>
 										<div class="more my-4"><a href="#" class="rounded-pill text-uppercase bg-white px-3 py-1">cek profil</a></div>
 									</div>
-								</div>
+								</div> --}}
+								<div class="block text-center">
+									<div class="img d-inline-block"><img src="https://zonderstudio.com/moma/public/img/mom/{{ $row->image }}" alt="" class="img-fluid"></div>
+									<div class="after-img text-white mt-2">
+										<div class="name">{{ $row->name }}</div>
+										<div class="position">{{ $row->quote }}</div>
+										<div class="d-flex align-items-center justify-content-center sosmed-profile my-4">
+											<a href="https://www.instagram.com/{{ $row->link_instagram }}" class="ig"><i class="fab fa-instagram"></i></a>
+											<a href="https://wa.me/#" class="wa"><i class="fab fa-whatsapp"></i></a>
+											</div>
+											</div>
+										</div>
 							@endforeach						
 						@endif	
 					</div>
