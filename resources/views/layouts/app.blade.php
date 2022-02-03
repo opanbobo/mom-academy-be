@@ -60,7 +60,7 @@
 					<li class="mr-4 {{ Request::segment(1) == 'events' ? 'active' :'' }} "><a href="{{ url('events') }}">Events</a></li>
           <li class="mr-4 {{ Request::segment(1) == 'articles' ? 'active' :'' }} "><a href="{{ url('articles') }}">Article</a></li>
 					<li class="mr-4 {{ Request::segment(1) == 'market-day' ? 'active' :'' }} "><a href="{{ url('market-day') }}"">Market Day</a></li>
-          <li class="mr-4 {{ Request::segment(1) == 'join-us' ? 'active' :'' }} "><a href="#{{ url('join-us') }}"">Join Us</a></li>          
+          <li class="mr-4 {{ Request::segment(1) == 'join-us' ? 'active' :'' }} "><a href="#{{ url('auth/google') }}"">Join Us</a></li>          
 					</ul>
 				</div>
 				</div>            

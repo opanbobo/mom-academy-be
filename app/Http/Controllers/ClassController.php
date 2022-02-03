@@ -41,8 +41,8 @@ class ClassController extends Controller
         $paginator = new \Illuminate\Pagination\LengthAwarePaginator($result['data'], $result['count'], $limit, $page);
         $paginator = $paginator->withPath($path);
         // dd($paginator);
-        $moms   = $model->db_mom_lists(['limit' => 6]);
-
+        $moms   = $model->db_expert_lists(['limit' => 6]);
+        // dd($moms);
         $data['moms'] = $moms;
         // $data['module'] = $module;
         $data['results'] = $result['data'];     

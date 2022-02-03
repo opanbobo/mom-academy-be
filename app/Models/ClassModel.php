@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 class ClassModel extends Model
 {
-    protected $table = 'course';
-    protected $moms = 'moms';
+    protected $table = 'course';    
     protected $module = 'module_ebook';
+    protected $expert = 'expert';
 
     public function db_lists_class($param)
     {
@@ -45,10 +45,10 @@ class ClassModel extends Model
 
         $result = $query->first();        
         return $result;
-    }
-    public function db_mom_lists($param)
+    }  
+    public function db_expert_lists($param)
     {
-        $query = DB::table($this->moms);                
+        $query = DB::table($this->expert);                
         $query->limit($param['limit']);
         $result = $query->get();        
         return $result;
