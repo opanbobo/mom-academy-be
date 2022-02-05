@@ -4,24 +4,23 @@ namespace App\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
-use App\Models\Api;
+use App\Models\UsersModel;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
     // use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(Request $request)
+    public function index(UsersModel $model, Request $request)
     {
         $email = $request->input('email');
         $password = $request->input('password');
 
         $checker = true;
 
-        $status = 'Success';
-        $code = '200';
-        $error = array();
-        $message = array();
-        $data = [];
+        $status = true;
+        $code = '200';        
+        $message = [];        
 
         $rules = array(
             'email' => 'required',
@@ -30,50 +29,115 @@ class LoginController extends Controller
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             $checker = false;
-            $status = 'Error';
-            $code = 422;
-            $error = 'Validation Error';
+            $status = false;
+            $code = 422;            
             $message = $validator->errors();
         }
 
-        if ($checker) {
-            $param['email'] = $email;
-            $param['password'] = $password;
-
-            $apiProcess = Api::login($param);
-            
-            if (!isset($apiProcess->access_token)) {
+        if ($checker) {            
+            $checkUser = $model->db_get_email($email);            
+            if (!$checkUser) {
+                $checker = false;
                 $status = false;
-                $message[] = 'invalid username or password';
-                $data = null;
+                $message[] = 'invalid email';                
                 $code = 401;
-            } else {
-                $result = $apiProcess;
+            }
+        }
+        if ($checker) {                
+            $checkPassword = Hash::check($password, $checkUser->password);               
+            if (!$checkPassword) {                        
+                $status = false;
+                $message[] = 'invalid password';                
+                $code = 401;
+            } else {                
                 $user_session = array(
-                    'user_id' => $result->data->user_id,
-                    'user_email' => $result->data->email,
-                    'user_role' => $result->data->role_name,
-                    'user_name' => $result->data->name,
-                    'user_login' => true,
-                    'accessToken' => $result->access_token,
+                    'user_id' => $checkUser->user_id,
+                    'user_email' => $checkUser->email,                    
+                    'user_name' => $checkUser->name,
+                    'user_login' => true,                    
                 );
     
                 // ** Create New Session 
                 request()->session()->put('user_login', json_encode($user_session));
 
                 $status = true;
-                $message[] = 'login success';
-                $data = [
-                    'result' => $user_session
-                ];
+                $message[] = 'login success';                
             }
-        }
+        } 
 
         $response['status'] = $status;
-        $response['code'] = $code;
-        $response['error'] = $error;
-        $response['message'] = $message;
-        $response['data'] = $data;
+        $response['code'] = $code;        
+        $response['message'] = $message;        
+        return response()->json($response);
+    }
+    public function register(UsersModel $model, Request $request)
+    {
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');
+        $email = $request->input('email');
+        $phone = $request->input('phone');        
+        $password = $request->input('password');
+        $repassword = $request->input('password_confirmation');        
+
+        $status = true;
+        $code = '200';        
+        $message = [];        
+
+        $rules = array(
+            'name' => 'required',
+            'lastname' => 'required',
+            // 'phone' => 'required',            
+            'email' => 'required',
+            'password' => 'required',
+            'password_confirmation' => 'required'
+        );
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {            
+            $status = false;
+            $code = 422;            
+            $message = $validator->errors();
+        }
+
+        if ($status) {
+            if ($repassword != $password) {                
+                $status = false;
+                $message[] = 'password confirmation does not match';                
+                $code = 401;
+            }
+
+        }
+             
+        if ($status) {    
+            
+            $fullname = $name .' '.$lastname;
+            
+            $params = [
+                'name' => $fullname,           
+                'phone' => $phone,            
+                'email' => $email,
+                'role_id' => 3,    
+                'password' => $password,                
+            ];            
+            $insertUser = $model->db_insert($params);
+
+            $user_session = array(
+                'user_id' => $insertUser,
+                'user_email' => $email,                    
+                'user_name' => $name,
+                'user_login' => true,                    
+            );
+
+            // ** Create New Session 
+            request()->session()->put('user_login', json_encode($user_session));
+
+            $status = true;
+            $message[] = 'login success';   
+
+        } 
+
+        $response['status'] = $status;
+        $response['code'] = $code;        
+        $response['message'] = $message;        
         return response()->json($response);
     }
 }

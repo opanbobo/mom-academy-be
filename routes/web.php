@@ -28,10 +28,8 @@ Route::group(['as' => 'landing.'], function () {
     Route::get('/home','HomeController@index')->name('home');
 });
 
-// Login
-Route::group(['prefix' => 'login'], function () {
-    Route::post('/', 'LoginController@index')->name('login');   
-});
+Route::post('login', 'LoginController@index'); // Login
+Route::post('register', 'LoginController@register'); //Register
 
 // abou us
 Route::group(['prefix' => 'about-us'], function () {
@@ -65,12 +63,16 @@ Route::group(['prefix' => 'events'], function () {
 Route::group(['prefix' => 'market-day'], function () {
     Route::get('/', 'MarketController@index');    
 });
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//google
 Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
+//facebook
+Route::get('auth/facebook', 'Auth\FacebookController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'Auth\FacebookController@handleFacebookCallback');
   
 // Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 // Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

@@ -6,19 +6,21 @@ use App\Http\Controllers\Controller;
 // use Socialite;
 use Exception;
 use Illuminate\Support\Facades\Hash;
-use Laravel\Socialite\Facades\Socialite;
 use App\Models\UsersModel;
 
-class GoogleController extends Controller
+use Socialite;
+use App\Services\SocialFacebookAccountService;
+
+class FacebookController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
+    public function redirectToFacebook()
+    {        
+        return Socialite::driver('facebook')->redirect();
     }
       
     /**
@@ -26,14 +28,14 @@ class GoogleController extends Controller
      *
      * @return void
      */
-    public function handleGoogleCallback(UsersModel $model)
+    public function handleFacebookCallback(UsersModel $model)
     {
         // $model = new Users();
         try {
             
-            $user = Socialite::driver('google')->user();
-            
-            $finduser = $model->db_detail_login('google_id',$user->id);
+            $user = Socialite::driver('facebook')->user();
+            // dd($user);
+            $finduser = $model->db_detail_login('facebook_id',$user->id);
             
             if($finduser){
 
@@ -51,7 +53,7 @@ class GoogleController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'role_id' => 3,
-                    'google_id'=> $user->id,
+                    'facebook_id'=> $user->id,
                     'password' => Hash::make('secret_password')
                 ];
                 

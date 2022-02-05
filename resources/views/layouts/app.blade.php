@@ -59,8 +59,10 @@
 					<li class="mr-4 {{ Request::segment(1) == 'get-income' ? 'active' :'' }} "><a href="{{ url('get-income') }}">Get Income</a></li>
 					<li class="mr-4 {{ Request::segment(1) == 'events' ? 'active' :'' }} "><a href="{{ url('events') }}">Events</a></li>
           <li class="mr-4 {{ Request::segment(1) == 'articles' ? 'active' :'' }} "><a href="{{ url('articles') }}">Article</a></li>
-					<li class="mr-4 {{ Request::segment(1) == 'market-day' ? 'active' :'' }} "><a href="{{ url('market-day') }}"">Market Day</a></li>
-          <li class="mr-4 {{ Request::segment(1) == 'join-us' ? 'active' :'' }} "><a href="#{{ url('auth/google') }}"">Join Us</a></li>          
+					<li class="mr-4 {{ Request::segment(1) == 'market-day' ? 'active' :'' }} "><a href="{{ url('market-day') }}">Market Day</a></li>
+          @if (!AppHelper::getAuth())
+          <li class="mr-4 "><a data-toggle="modal" data-target="#modalRegist">Join Us</a></li>          
+          @endif
 					</ul>
 				</div>
 				</div>            
@@ -128,32 +130,38 @@
           </div>
           <div class="modal-body px-md-5">
             <h4 class="title">Login</h4>
-            <div class="sso mb-3"><img src="images/btn-fb.png" alt="" class="img-fluid"></div>
-            <div class="sso mb-3"><img src="images/btn-google.png" alt="" class="img-fluid"></div>
+            <div class="sso mb-3">
+				<a href="{{ url('auth/facebook') }}">
+					<img src="images/btn-fb.png" alt="" class="img-fluid">
+				</a>
+		  	</div>
+            <div class="sso mb-3">
+              <a href="{{ url('auth/google') }}">
+                <img src="images/btn-google.png" alt="" class="img-fluid">
+               </a>
+            </div>
             <div class="wrapper-oblock position-relative text-center mb-3">
               <div class="oblock px-3">atau</div>
             </div>
-            <form action="" class="form-regist">
+            <form action="" class="form-regist" id="registerForm" content="{{ csrf_token() }}">
+             
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="form-control" placeholder="Nama Depan" name="name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nama Depan">
+                <input type="text" class="form-control" placeholder="Nama Belakang" name="lastname">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nama Belakang">
+                <input type="text" class="form-control" placeholder="Alamat Email" name="email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Alamat Email">
+                <input type="text" class="form-control" placeholder="Nomor Ponsel" name="phone">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nomor Ponsel">
+                <input type="password" class="form-control" placeholder="Password" name="password">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="*Konfirmasi Password">
+                <input type="password" class="form-control" placeholder="*Konfirmasi Password" name="password_confirmation">
               </div>
               <div class="form-group">
                 <div class="form-check">
@@ -181,7 +189,13 @@
               </div>
               <div class="form-group">
                 <button class="text-uppercase text-white font-weight-bold border-0 w-100 btn-submit-popup" type="submit">Daftar sekarang</button>
+				<div class="d-flex justify-content-center btn-spinner-login">
+					
+				  </div>				  
               </div>
+			  <div class="form-group alert">
+				{{-- <div class="alert alert-danger">error</div> --}}
+			  </div>
               <div class="form-group">
                 <div data-dismiss="modal" data-toggle="modal" href="#modalLogin">Sudah punya akun? Masuk</div>
               </div>
@@ -199,8 +213,16 @@
           </div>
           <div class="modal-body px-md-5">
             <h4 class="title">Login</h4>
-            <div class="sso mb-3"><img src="images/btn-fb.png" alt="" class="img-fluid"></div>
-            <div class="sso mb-3"><img src="images/btn-google.png" alt="" class="img-fluid"></div>
+            <div class="sso mb-3">
+				<a href="{{ url('auth/facebook') }}">
+					<img src="images/btn-fb.png" alt="" class="img-fluid">
+				</a>
+			</div>
+            <div class="sso mb-3">
+             <a href="{{ url('auth/google') }}">
+              <img src="images/btn-google.png" alt="" class="img-fluid">
+             </a>
+            </div>
             <div class="wrapper-oblock position-relative text-center mb-3">
               <div class="oblock px-3">atau</div>
             </div>
@@ -214,9 +236,7 @@
               <div class="form-group">
                 <button class="text-uppercase text-white font-weight-bold border-0 w-100 btn-submit-popup" type="submit">Next</button>
                 <div class="d-flex justify-content-center btn-spinner-login">
-                  {{-- <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                  </div> --}}
+                
                 </div>
               </div>
               <div class="form-group alert">
