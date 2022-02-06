@@ -104,19 +104,23 @@ class LoginController extends Controller
                 $message[] = 'password confirmation does not match';                
                 $code = 401;
             }
-
         }
-             
-        if ($status) {    
-            
-            $fullname = $name .' '.$lastname;
-            
+        if ($status) {
+            $checkMail = $model->db_get_email($email);
+            if ($checkMail) {                
+                $status = false;
+                $message[] = 'email already registered';                
+                $code = 401;
+            }
+        }    
+        if ($status) {                
+            $fullname = $name .' '.$lastname;            
             $params = [
                 'name' => $fullname,           
                 'phone' => $phone,            
                 'email' => $email,
                 'role_id' => 3,    
-                'password' => $password,                
+                'password' => Hash::make($password)              
             ];            
             $insertUser = $model->db_insert($params);
 
