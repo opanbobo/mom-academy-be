@@ -23,15 +23,15 @@ class LoginController extends Controller
         $message = [];        
 
         $rules = array(
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
         );
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             $checker = false;
             $status = false;
             $code = 422;            
-            $message = $validator->errors();
+            $message = $validator->errors()->all();
         }
 
         if ($checker) {            
@@ -86,16 +86,16 @@ class LoginController extends Controller
         $rules = array(
             'name' => 'required',
             'lastname' => 'required',
-            // 'phone' => 'required',            
-            'email' => 'required',
-            'password' => 'required',
+            'phone' => 'min:10',            
+            'email' => 'required|email',
+            'password' => 'required|min:8',
             'password_confirmation' => 'required'
         );
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {            
             $status = false;
             $code = 422;            
-            $message = $validator->errors();
+            $message = $validator->errors()->all();
         }
 
         if ($status) {

@@ -129,7 +129,7 @@
             <div class="text-center w-100"><img src="images/logo.png" alt="" class="img-fluid"></div>
           </div>
           <div class="modal-body px-md-5">
-            <h4 class="title">Login</h4>
+            <h4 class="title">Register</h4>
             <div class="sso mb-3">
 				<a href="{{ url('auth/facebook') }}">
 					<img src="images/btn-fb.png" alt="" class="img-fluid">

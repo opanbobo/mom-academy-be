@@ -43,10 +43,12 @@ function login(data,token) {
                 // $('#modalRegist .modal-body').html('<div class="alert alert-success">' + data['message'][0] + '</div>');
                 window.location.href = '/'
             } else {
-                var message = data['message']
-                if (data['message']['email'] !== undefined || data['message']['password'] !== undefined) {
-                    message = 'required email and password'
+                let message = '<ul>'
+                for (const row of data['message']) {
+                    message += `<li>${row}</li>`
                 }
+                message += '</ul>'
+                console.log(message)
                 $('#modalLogin .form-group.alert').html('<div class="alert alert-danger">' + message + '</div>');
             }
 
@@ -79,14 +81,19 @@ function register(data,token) {
             'X-CSRF-TOKEN': token
         },
         success: function (data) {
-            console.log(data)
+            console.log(data['message'])
             var spiner = $('.btn-spinner-login').find('.spinner-border')
             spiner.fadeOut(200)
             if (data['code'] == 200) {
                 // $('#modalRegist .modal-body').html('<div class="alert alert-success">' + data['message'][0] + '</div>');
                 window.location.href = '/'
-            } else {
-                var message = data['message'][0]               
+            } else {                
+                let message = '<ul>'
+                for (const row of data['message']) {
+                    message += `<li>${row}</li>`
+                }
+                message += '</ul>'
+                console.log(message)
                 $('#modalRegist .form-group.alert').html('<div class="alert alert-danger">' + message + '</div>');
             }
 
