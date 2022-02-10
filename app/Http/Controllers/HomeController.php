@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function index(HomeModel $model)
     {
-        request()->session()->forget('user_login');
+        // request()->session()->forget('user_login');
 
         // $data_session = AppHelper::getAuth();
         // dd($data_session);
