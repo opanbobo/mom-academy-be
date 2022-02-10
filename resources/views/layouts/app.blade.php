@@ -131,9 +131,9 @@
           <div class="modal-body px-md-5">
             <h4 class="title">Register</h4>
             <div class="sso mb-3">
-				<a href="{{ url('auth/facebook') }}">
+				{{-- <a href="{{ url('auth/facebook') }}">
 					<img src="images/btn-fb.png" alt="" class="img-fluid">
-				</a>
+				</a> --}}
 		  	</div>
             <div class="sso mb-3">
               <a href="{{ url('auth/google') }}">
@@ -214,9 +214,9 @@
           <div class="modal-body px-md-5">
             <h4 class="title">Login</h4>
             <div class="sso mb-3">
-				<a href="{{ url('auth/facebook') }}">
+				{{-- <a href="{{ url('auth/facebook') }}">
 					<img src="images/btn-fb.png" alt="" class="img-fluid">
-				</a>
+				</a> --}}
 			</div>
             <div class="sso mb-3">
              <a href="{{ url('auth/google') }}">
