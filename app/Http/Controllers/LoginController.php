@@ -86,7 +86,7 @@ class LoginController extends Controller
         $rules = array(
             'name' => 'required',
             'lastname' => 'required',
-            'phone' => 'min:10',            
+            'phone' => 'optional|min:10|max:13',            
             'email' => 'required|email',
             'password' => 'required|min:8',
             'password_confirmation' => 'required'
@@ -143,5 +143,11 @@ class LoginController extends Controller
         $response['code'] = $code;        
         $response['message'] = $message;        
         return response()->json($response);
+    }
+    public function logout(Request $request)
+    {
+        request()->session()->forget('user_login');
+
+        return redirect('/home');
     }
 }

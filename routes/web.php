@@ -30,6 +30,7 @@ Route::group(['as' => 'landing.'], function () {
 
 Route::post('login', 'LoginController@index'); // Login
 Route::post('register', 'LoginController@register'); //Register
+Route::get('logout', 'LoginController@logout'); //Register
 
 // abou us
 Route::group(['prefix' => 'about-us'], function () {

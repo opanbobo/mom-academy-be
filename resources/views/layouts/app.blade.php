@@ -12,8 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/main.css')}}">
     <script src="{{ asset('scripts/modernizr.js') }}"></script>
+	<style>
+		.mnn::after{
+			display: none !important;
+		}
+	</style>
   </head>
   <body>
     <div id="wrapper">
@@ -22,20 +28,25 @@
 			<div class="container">
 				<div class="row justify-content-end">
 					<div class="col-md-6">
-						<div class="d-flex justify-content-end align-items-center">
-							@if (AppHelper::getAuth())
-              <div class="user pr-2">
-                {{-- <a data-dismiss="modal" data-toggle="modal" href="#modalLogin"> --}}
-                  <img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid">
-                {{-- </a> --}}
-							</div>
-								<div class=" pr-2 text-center">
-                 <span class="white-color">{{ ucwords(strtok(AppHelper::getAuth('user_name'), ' ')) }}</span>
-                </div>
+						<div class="d-flex justify-content-end align-items-center">							
+							@if (AppHelper::getAuth())								
+								<div class=" pr-2 text-center">									
+									<div class="btn-group">										
+										<div class="user pr-2 ">
+											<a class="dropdown-toggle mnn" data-toggle="dropdown" aria-expanded="true" href="#">	
+												<img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid">
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a href="{{ url('logout') }}" class="dropdown-item" >Logout</a>										  
+											  </div>
+										</div>																				
+									</div>
+									<span class="white-color" style="color: #ffffff">{{ ucwords(strtok(AppHelper::getAuth('user_name'), ' ')) }}</span>
+								</div>
 							@else	
-              <div class="user pr-2"><a data-dismiss="modal" data-toggle="modal" href="#modalLogin">
-                <img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid"></a>
-							</div>
+								<div class="user pr-2"><a data-dismiss="modal" data-toggle="modal" href="#modalLogin">
+									<img src="{{ asset('images/ico-user.png') }}" alt="" class="img-fluid"></a>
+								</div>
 								<div class="act-link pr-2 text-center"><a data-toggle="modal" data-target="#modalRegist">Join MoM</a></div>
 							@endif
 							<form class="searchbar">
@@ -250,6 +261,31 @@
         </div>
       </div>
     </div>
+    {{-- modal alert --}}    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            {{-- <h5 class="modal-title" id="exampleModalLabel" style="margin: 0 auto"></h5> --}}
+            {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> --}}
+          </div>
+          <div class="modal-body text-center">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Anda belum Login!</strong> Silahkan login untuk melihat detail Class .
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>  
+          <div class="modal-footer text-center">
+          </div>       
+        </div>
+      </div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -260,8 +296,13 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-    <script src="{{ asset('scripts/vendor.js') }}"></script>
+    <script src="{{ asset('scripts/vendor.js') }}"></script>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('scripts/main.js') }}"></script>
     <script src="{{ asset('scripts/ajax.js') }}"></script>
+    {{-- <script>
+      $('#modalAlert').modal('show')
+    </script> --}}
   </body>
 </html>

@@ -12,19 +12,14 @@ class EventsModel extends Model
 
     public function db_lists($param)
     {
-        $query = DB::table($this->table . ' as prim');        
-        $query->select('prim.*','ex.expert_name');
-        $query->leftJoin('expert as ex','prim.speaker', '=', 'ex.expert_id');                
-        // $query->limit($param['limit']);
+        $query = DB::table($this->table); 
         $result = $query->paginate($param['limit']);     
         return $result;
     }
 
     public function db_detail($id)
     {
-        $query = DB::table($this->table . ' as prim');      
-        $query->select('prim.*','ex.expert_name');
-        $query->leftJoin('expert as ex','prim.speaker', '=', 'ex.expert_id');            
+        $query = DB::table($this->table);                        
         $query->where('event_id',$id);
 
         $result = $query->first();        

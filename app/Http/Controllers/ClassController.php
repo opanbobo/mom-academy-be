@@ -12,7 +12,7 @@ class ClassController extends Controller
     public function index(ClassModel $model, Request $request)
     {
         $academyType = $request->input('category');
-
+         
         //paging
         $limit = 9;        
         $page = $request->input('page') ?: 1;        
@@ -52,6 +52,10 @@ class ClassController extends Controller
     }
     public function detail(ClassModel $model, Request $request, $id)
     {        
+        $data_session = AppHelper::getAuth();
+        if (!$data_session || $data_session == '') {
+            return redirect('/home');
+        }
         
         $class = $model->db_detail($id);
         

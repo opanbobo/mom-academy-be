@@ -31,9 +31,7 @@ class HomeModel extends Model
     }
     public function db_events_lists($param)
     {
-        $query = DB::table($this->events . ' as prim');        
-        $query->select('prim.*','ex.expert_name');
-        $query->leftJoin('expert as ex','prim.speaker', '=', 'ex.expert_id');             
+        $query = DB::table($this->events);                     
         $query->where('is_publish',1);
         $query->limit($param['limit']);
         $result = $query->get();        

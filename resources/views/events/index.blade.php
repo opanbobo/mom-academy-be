@@ -21,7 +21,7 @@
 									<img src="https://zonderstudio.com/moma/public/img/event/{{ $row->image }}" alt="" class="img-fluid">
 									<div class="floating-txt d-block d-sm-none position-absolute text-white p-2">course_name
 										<h6>{{Str::words($row->event_name,5)}}</h6>
-										<div class="author">By {{$row->expert_name}}</div>
+										<div class="author">By {{$row->speaker}}</div>
 									</div>  
 									</a>
 								</div>
@@ -30,7 +30,7 @@
 									</div>
 									<h6 class="d-none d-sm-block"><a href="{{ url('/events/detail/'.$row->event_id)}}">{{Str::words($row->event_name,5)}}</a></h6>
 									<div class="column">
-										<div class="author d-none d-sm-block">By {{$row->expert_name}}</div>
+										<div class="author d-none d-sm-block">By {{$row->speaker}}</div>
 										<div class="btn-act text-center">
 											<a href="#" class="free rounded-pill text-white mb-2 text-uppercase p-1">Free</a>
 											<a href="#" class="daftar rounded-pill text-white text-uppercase p-1">Daftar</a>
