@@ -8,3 +8,10 @@ body{font-family:Poppins,sans-serif}#wrapper{overflow:hidden}.form-control-plain
 a.page-link{
     color: #f26345;
 }
+#behind-mom .multiple-items .img img {
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}

@@ -60,7 +60,7 @@
                       <div class="block-text w-100 p-3">
                         <div class="row column">
                           <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="detail-market.html">cottonink x liunic </a></h6>
+                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
                             <div class="price mb-2">Rp 180.000</div>
                           </div>
                           <div class="col-3">
@@ -82,7 +82,7 @@
                       <div class="block-text w-100 p-3">
                         <div class="row column">
                           <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="detail-market.html">cottonink x liunic </a></h6>
+                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
                             <div class="price mb-2">Rp 180.000</div>
                           </div>
                           <div class="col-3">
@@ -104,7 +104,7 @@
                       <div class="block-text w-100 p-3">
                         <div class="row column">
                           <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="detail-market.html">cottonink x liunic </a></h6>
+                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
                             <div class="price mb-2">Rp 180.000</div>
                           </div>
                           <div class="col-3">
@@ -126,7 +126,7 @@
                       <div class="block-text w-100 p-3">
                         <div class="row column">
                           <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="detail-market.html">cottonink x liunic </a></h6>
+                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
                             <div class="price mb-2">Rp 180.000</div>
                           </div>
                           <div class="col-3">
@@ -148,7 +148,7 @@
                       <div class="block-text w-100 p-3">
                         <div class="row column">
                           <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="detail-market.html">cottonink x liunic </a></h6>
+                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
                             <div class="price mb-2">Rp 180.000</div>
                           </div>
                           <div class="col-3">
@@ -170,7 +170,7 @@
                       <div class="block-text w-100 p-3">
                         <div class="row column">
                           <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="detail-market.html">cottonink x liunic </a></h6>
+                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
                             <div class="price mb-2">Rp 180.000</div>
                           </div>
                           <div class="col-3">
