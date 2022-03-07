@@ -63,6 +63,8 @@ Route::group(['prefix' => 'events'], function () {
 // market day
 Route::group(['prefix' => 'market-day'], function () {
     Route::get('/', 'MarketController@index');    
+    Route::get('/detail/{id}', 'MarketController@detail');
+
 });
 // Auth::routes();
 

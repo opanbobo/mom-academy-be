@@ -71,9 +71,9 @@
 					<li class="mr-4 {{ Request::segment(1) == 'events' ? 'active' :'' }} "><a href="{{ url('events') }}">Events</a></li>
           <li class="mr-4 {{ Request::segment(1) == 'articles' ? 'active' :'' }} "><a href="{{ url('articles') }}">Article</a></li>
 					<li class="mr-4 {{ Request::segment(1) == 'market-day' ? 'active' :'' }} "><a href="{{ url('market-day') }}">Market Day</a></li>
-          @if (!AppHelper::getAuth())
+          {{-- @if (!AppHelper::getAuth())
           <li class="mr-4 "><a data-toggle="modal" data-target="#modalRegist">Join Us</a></li>          
-          @endif
+          @endif --}}
 					</ul>
 				</div>
 				</div>            

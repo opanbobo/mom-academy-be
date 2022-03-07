@@ -29,166 +29,64 @@
           </div>
         </form>          
         <div class="column-list border-top pt-3">
-          <div class="container">
-            <div class="column mb-5">              
-              <div class="row justify-content-center pb-5">
-                <div class="sortmenus d-flex px-3 px-sm-0 mobile-column">
-                  <p class="mr-5 mb-0">Urutkan</p>
-                  <ul class="p-0 m-0">
-                    <li class="active">Populer</li>
-                    <li>Terbaru</li>
-                    <li>Terlaris</li>
-                    <li>
-                      <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Harga
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Termurah</a>
-                          <a class="dropdown-item" href="#">Termahal</a>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block">
-                    <div class="block-col position-relative">
-                      <div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-                      <div class="block-text w-100 p-3">
-                        <div class="row column">
-                          <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
-                            <div class="price mb-2">Rp 180.000</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div>
-                          </div>
-                        </div>
-                        <div class="d-flex btn-act-market justify-content-between">
-                          <button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
-                          <button class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">detail</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block">
-                    <div class="block-col position-relative">
-                      <div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-                      <div class="block-text w-100 p-3">
-                        <div class="row column">
-                          <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
-                            <div class="price mb-2">Rp 180.000</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div>
-                          </div>
-                        </div>
-                        <div class="d-flex btn-act-market justify-content-between">
-                          <button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
-                          <button class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">detail</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block">
-                    <div class="block-col position-relative">
-                      <div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-                      <div class="block-text w-100 p-3">
-                        <div class="row column">
-                          <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
-                            <div class="price mb-2">Rp 180.000</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div>
-                          </div>
-                        </div>
-                        <div class="d-flex btn-act-market justify-content-between">
-                          <button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
-                          <button class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">detail</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block">
-                    <div class="block-col position-relative">
-                      <div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-                      <div class="block-text w-100 p-3">
-                        <div class="row column">
-                          <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
-                            <div class="price mb-2">Rp 180.000</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div>
-                          </div>
-                        </div>
-                        <div class="d-flex btn-act-market justify-content-between">
-                          <button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
-                          <button class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">detail</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block">
-                    <div class="block-col position-relative">
-                      <div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-                      <div class="block-text w-100 p-3">
-                        <div class="row column">
-                          <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
-                            <div class="price mb-2">Rp 180.000</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div>
-                          </div>
-                        </div>
-                        <div class="d-flex btn-act-market justify-content-between">
-                          <button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
-                          <button class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">detail</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block">
-                    <div class="block-col position-relative">
-                      <div class="img"><a href="detail-market.html" class="position-relative"><img src="images/market-thumb.png" alt="" class="img-fluid"></a></div>
-                      <div class="block-text w-100 p-3">
-                        <div class="row column">
-                          <div class="col-9">
-                            <h6 class="my-0 pt-0"><a href="#">cottonink x liunic </a></h6>
-                            <div class="price mb-2">Rp 180.000</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div>
-                          </div>
-                        </div>
-                        <div class="d-flex btn-act-market justify-content-between">
-                          <button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
-                          <button class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">detail</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+			<div class="container">
+				<div class="column mb-5">              
+					<div class="row justify-content-center pb-5">
+						<div class="sortmenus d-flex px-3 px-sm-0 mobile-column">
+							<p class="mr-5 mb-0">Urutkan</p>
+							<ul class="p-0 m-0">
+								<li class="active">Populer</li>
+								<li>Terbaru</li>
+								<li>Terlaris</li>
+								<li>
+									<div class="dropdown">
+									<button class="btn btn-secondary dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Harga
+									</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="#">Termurah</a>
+										<a class="dropdown-item" href="#">Termahal</a>
+									</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						@if ($results)
+							@foreach ($results as $row)
+							<div class="col-md-6 col-lg-4 mb-5">
+								<div class="block">
+									<div class="block-col position-relative">
+										<div class="img"><a href="detail-market.html" class="position-relative">
+											<img src="https://zonderstudio.com/moma/public/img/product/{{$row->product_image}}" alt="" class="img-fluid"></a></div>
+										<div class="block-text w-100 p-3">
+										<div class="row column">
+											<div class="col-9">
+											<h6 class="my-0 pt-0"><a href="{{ url('/market-day/detail/'.$row->product_id)}}">{{$row->name}} </a></h6>
+											<div class="price mb-2">Rp {{number_format($row->price)}}</div>
+											</div>
+											<div class="col-3">
+											{{-- <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div> --}}
+											</div>
+										</div>
+										<div class="d-flex btn-act-market justify-content-between">
+											<button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
+											<a href="{{ url('/market-day/detail/'.$row->product_id)}}" class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0" style="    width: 45%;
+												text-decoration: none;
+												text-align: center;
+												padding-top: 5px;">detail</a>
+										</div>
+										</div>
+									</div>       
+								</div>
+							</div>		
+							@endforeach
+						@endif      								
+					</div>
+				</div>
+			</div>
         </div>
-      </div>
+    </div>
 </div>
 @stop
