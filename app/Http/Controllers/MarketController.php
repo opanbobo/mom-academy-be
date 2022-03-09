@@ -26,6 +26,7 @@ class MarketController extends Controller
         $product_image = $model->db_get_image($id);                    
         $product_other = $model->db_list_other(['limit' => 6, 'id' => $id]);    
         
+        // dd($product);
         $data['results'] = $product;
         $data['other'] = $product_other;
         $data['images'] = $product_image;

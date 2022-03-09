@@ -58,7 +58,7 @@
 							<div class="col-md-6 col-lg-4 mb-5">
 								<div class="block">
 									<div class="block-col position-relative">
-										<div class="img"><a href="detail-market.html" class="position-relative">
+										<div class="img"><a href="{{ url('/market-day/detail/'.$row->product_id)}}" class="position-relative">
 											<img src="https://zonderstudio.com/moma/public/img/product/{{$row->product_image}}" alt="" class="img-fluid"></a></div>
 										<div class="block-text w-100 p-3">
 										<div class="row column">

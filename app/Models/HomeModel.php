@@ -12,6 +12,7 @@ class HomeModel extends Model
     protected $expert = 'expert';
     protected $moms = 'moms';
     protected $events = 'events';
+    protected $table_product = 'products';
 
     public function db_course_lists($param)
     {
@@ -49,6 +50,13 @@ class HomeModel extends Model
         $query = DB::table($this->moms);                
         $query->limit($param['limit']);
         $result = $query->get();        
+        return $result;
+    }
+    public function db_product_lists($param)
+    {
+        $query = DB::table($this->table_product); 
+        $query->limit($param['limit']);
+        $result = $query->get();    
         return $result;
     }
 }

@@ -217,117 +217,51 @@
 			</div>
 		</div>
 	</div>
-	<div id="market" class="section py-5 position-relative">
+	<div id="market" class="section py-5 position-relative market-class-page">
 		<div class="container">
 			<div class="d-none d-sm-block">
-			<div class="row text-white mb-5">
-				<div class="col-md-3">
-				<h1 class="h-100 d-flex align-items-center">Market Day</h1>
-				</div>
-				<div class="col-md-9">
-				<div class="shortdesc">
-					<p>Mom suka belanja? Temukan produk-produk berkualitas dari member MoMA di sini. Jika mom ingin produknya hadir juga di Market Day, silakan LINK berikut ini</p>
-				</div>              
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-				<div class="block-label rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-2">Product of The Day</div>
-				<div class="block product-off-the-day">
-					<div class="block-col position-relative">
-					<div class="img h-100"><a href="detail-market.html" class="position-relative h-100"><img src="{{ asset('images/img-product-day.png') }}" alt="" class="img-fluid h-100"></a></div>
-					<div class="block-text w-100 p-3">
-						<h6><a href="detail-market.html">cottonink x liunic </a></h6>
-						<div class="column">
-						<div class="price">Rp 180.000</div>
-						<div class="rating">4,8 <i class="fas fa-star"></i> Terjual 3,4rb</div>
-						</div>
+				<div class="row text-white mb-5">
+					<div class="col-md-3">
+					<h1 class="h-100 d-flex align-items-center">Market Day</h1>
 					</div>
-					</div>       
-				</div>
-				<div class="shop-more text-uppercase"><a href="#">shop more >>></a></div>
-				</div>
-				<div class="col-md-4">
-				<div class="block-label mt-85 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Books</div>
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-1.png') }}" alt="" class="img-fluid"></a></div>
-					<div class="block-text w-100 p-3">
-						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
-						<div class="column">
-						<div class="price mb-2">Rp 180.000</div>
-						<div class="rating">4,8 <i class="fas fa-star"></i> Terjual 3,4rb</div>
-						</div>
+					<div class="col-md-9">
+					<div class="shortdesc">
+						<p>Mom suka belanja? Temukan produk-produk berkualitas dari member MoMA di sini. Jika mom ingin produknya hadir juga di Market Day, silakan LINK berikut ini</p>
+					</div>              
 					</div>
-					</div>       
 				</div>
-				<div class="shop-more text-uppercase"><a href="#">shop more >>></a></div>
+				<div class="row">
+					@if ($product)
+						@foreach ($product as $row)
+						<div class="col-md-6 col-lg-4 mb-5">
+							<div class="block">
+								<div class="block-col position-relative">
+									<div class="img"><a href="{{ url('/market-day/detail/'.$row->product_id)}}" class="position-relative">
+										<img src="https://zonderstudio.com/moma/public/img/product/{{$row->product_image}}" alt="" class="img-fluid"></a></div>
+									<div class="block-text w-100 p-3">
+									<div class="row column">
+										<div class="col-9">
+										<h6 class="my-0 pt-0"><a href="{{ url('/market-day/detail/'.$row->product_id)}}">{{$row->name}} </a></h6>
+										<div class="price mb-2">Rp {{number_format($row->price)}}</div>
+										</div>
+										<div class="col-3">
+										{{-- <div class="rating"><span>4,8</span> <i class="fas fa-star"></i></div> --}}
+										</div>
+									</div>
+									<div class="d-flex btn-act-market justify-content-between">
+										<button class="buy text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0">beli</button>
+										<a href="{{ url('/market-day/detail/'.$row->product_id)}}" class="detail text-uppercase font-weight-bold rounded-pill bg-orange text-white border-0" style="    width: 45%;
+											text-decoration: none;
+											text-align: center;
+											padding-top: 5px;">detail</a>
+									</div>
+									</div>
+								</div>       
+							</div>
+						</div>	
+						@endforeach
+					@endif					
 				</div>
-				<div class="col-md-4">
-				<div class="block-label mt-85 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Books</div>
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-1.png') }}" alt="" class="img-fluid"></a></div>
-					<div class="block-text w-100 p-3">
-						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
-						<div class="column">
-						<div class="price mb-2">Rp 180.000</div>
-						<div class="rating">4,8 <i class="fas fa-star"></i> Terjual 3,4rb</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				<div class="shop-more text-uppercase"><a href="#">shop more >>></a></div>
-				</div>
-				<div class="col-md-4">
-				<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">UMKM Product</div>
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-2.png') }}" alt="" class="img-fluid"></a></div>
-					<div class="block-text w-100 p-3">
-						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
-						<div class="column">
-						<div class="price mb-2">Rp 180.000</div>
-						<div class="rating">4,8 <i class="fas fa-star"></i> Terjual 3,4rb</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				<div class="shop-more text-uppercase"><a href="#">shop more >>></a></div>
-				</div>
-				<div class="col-md-4">
-				<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Our Brands Product</div>
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-2.png') }}" alt="" class="img-fluid"></a></div>
-					<div class="block-text w-100 p-3">
-						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
-						<div class="column">
-						<div class="price mb-2">Rp 180.000</div>
-						<div class="rating">4,8 <i class="fas fa-star"></i> Terjual 3,4rb</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				<div class="shop-more text-uppercase"><a href="#">shop more >>></a></div>
-				</div>
-				<div class="col-md-4">
-				<div class="block-label mt-3 rounded-pill bg-white d-inline-block p-1 px-3 mb-3 ml-3">Merchandise</div>
-				<div class="block">
-					<div class="block-col position-relative">
-					<div class="img"><a href="detail-market.html" class="position-relative"><img src="{{ asset('images/img-product-3.png') }}" alt="" class="img-fluid"></a></div>
-					<div class="block-text w-100 p-3">
-						<h6 class="mb-0"><a href="detail-market.html">cottonink x liunic </a></h6>
-						<div class="column">
-						<div class="price mb-2">Rp 180.000</div>
-						<div class="rating">4,8 <i class="fas fa-star"></i> Terjual 3,4rb</div>
-						</div>
-					</div>
-					</div>       
-				</div>
-				<div class="shop-more text-uppercase"><a href="#">shop more >>></a></div>
-				</div>
-			</div>
 			</div>
 			<div class="d-block d-sm-none">
 			<h1 class="h-100 d-flex align-items-center text-white">Market Day</h1>

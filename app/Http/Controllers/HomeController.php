@@ -29,7 +29,7 @@ class HomeController extends Controller
         $expert = $model->db_expert_lists(['limit' => 6]);
         $moms   = $model->db_mom_lists(['limit' => 6]);
         $events = $model->db_events_lists(['limit' => 3]);
-        
+        $product = $model->db_product_lists(['limit' => 3]);        
         // $dt = Carbon::parse($this->currentTime)->timezone('Asia/Jakarta');
         // $toDay = $dt->format('d');
         // $toMonth = $dt->format('M');
@@ -39,6 +39,7 @@ class HomeController extends Controller
         $data['module'] = $module;
         $data['expert'] = $expert;
         $data['moms'] = $moms;
+        $data['product'] = $product;
         $data['titlepage'] = 'home';
         return view('home.home',$data);
     }

@@ -2,7 +2,7 @@
 @section('content')
 <div class="main-content">
     <div id="market" class="section pb-5 bg-white shadow-sm market-class-page">
-        <form action="" class="filter-category mb-3 pt-4 pt-lg-0">
+        {{-- <form action="" class="filter-category mb-3 pt-4 pt-lg-0">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
@@ -27,11 +27,11 @@
                     </div>              
                 </div>
             </div>
-        </form>          
+        </form>           --}}
         <div class="column-list border-top pt-3">
             <div class="container">
                 <div class="column mb-5">              
-                    <div class="row justify-content-center pb-5">
+                    {{-- <div class="row justify-content-center pb-5">
                         <div class="sortmenus d-flex px-3 px-sm-0 mobile-column">
                             <p class="mr-5 mb-0">Urutkan</p>
                             <ul class="p-0 m-0">
@@ -51,13 +51,13 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="market-left-wrapper">
                                 <div class="market-left-img mb-4">
-                                    <div class="slider multiple-items-1">
-                                        @if ($results)
+                                    <div class="slider multiple-items-1">                                      
+                                        @if (sizeof($images)>0)
 							                @foreach ($images as $val)                                                  
                                                 <img src="https://zonderstudio.com/moma/public/img/product/{{$val->file_image}}" class="img-fluid">                                        
                                             @endforeach						                                                            
@@ -160,7 +160,7 @@
                                                 <div class="block-text w-100 p-3">
                                                 <div class="row column">
                                                     <div class="col-9">
-                                                    <h6 class="my-0 pt-0"><a href="{{ url('/market-day/detail/'.$item->product_id)}}">{{$item->product_image}}</a></h6>
+                                                    <h6 class="my-0 pt-0"><a href="{{ url('/market-day/detail/'.$item->product_id)}}">{{$item->name}}</a></h6>
                                                     <div class="price mb-2">Rp {{number_format($item->price)}}</div>
                                                     </div>
                                                     {{-- <div class="col-3">
