@@ -52,6 +52,7 @@ Route::group(['prefix' => 'class'], function () {
 // get income
 Route::group(['prefix' => 'get-income'], function () {
     Route::get('/', 'IncomeController@index');    
+    Route::post('/register', 'IncomeController@register');    
 });
 
 // events

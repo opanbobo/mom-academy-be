@@ -13,11 +13,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/main.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="{{ asset('css/main.css')}}">
     <script src="{{ asset('scripts/modernizr.js') }}"></script>
 	<style>
 		.mnn::after{
 			display: none !important;
+		}
+		.select-hd{
+			display: none
 		}
 	</style>
   </head>
@@ -275,7 +279,7 @@
           </div>
           <div class="modal-body text-center">
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-              <strong>Anda belum Login!</strong> Silahkan login untuk melihat detail Class .
+              <strong>Anda belum Login!</strong><br> Silahkan login untuk melanjutkan.
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -286,6 +290,92 @@
         </div>
       </div>
     </div>
+
+	<!-- Modal Income -->
+    <div class="modal fade form-popup" id="modalIncome">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header border-0">
+					<div class="text-center w-100"><img src="images/logo.png" alt="" class="img-fluid"></div>
+				</div>
+				<div class="modal-body px-md-5">
+					<h4 class="title">Register Income</h4>					
+					<form action="" class="form-regist" id="incomeForm" content="{{ csrf_token() }}">					
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Nama" name="name">
+						</div>						
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Alamat Email" name="email">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Nomor WhatsApp" name="phone">
+						</div>
+						<div class="form-group">							
+							<input type="input" class="form-control" placeholder="Tanggal Lahir" id="inputDate" name="birthdate">
+						</div>
+						<div class="form-group">
+							{{-- <input type="password" class="form-control" placeholder="Alamat" name="address"> --}}
+							<textarea name="address" class="form-control" rows="3" placeholder="Alamat"></textarea>
+						</div>						
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Kota" name="city">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Provinsi" name="province">
+						</div>	
+						<div class="form-group">
+							{{-- <input type="text" class="form-control" placeholder="Provinsi" name="province"> --}}
+							<select name="apply_as" class="form-control">
+								<option value="">Daftar Sebagai</option>
+								<option value="momfluencer">MomFluencer</option>
+								<option value="momblogger">MomBlogger</option>
+								<option value="momfreelancer">MomFreelancer</option>
+							</select>
+						</div>	
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Instagram" name="link_ig">
+						</div>						
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Facebook" name="link_fb">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Tiktok" name="link_tiktok">
+						</div>	
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Twitter" name="link_twitter">
+						</div>						
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Youtube" name="link_youtube">
+						</div>
+						<div class="form-group">							
+							<select name="category" class="form-control">
+								<option value="">Category</option>
+								<option value="parenting">Parenting</option>
+								<option value="beauty">Beauty</option>
+								<option value="kuliner">Kuliner</option>
+
+								<option value="kesehatan">Kesehatan</option>
+								<option value="others">Kategori lain</option>								
+							</select>														
+						</div>						
+						<div class="form-group select-hd">
+							<input type="text" class="form-control" placeholder="Category Lain" name="category2">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Pekerjaan Terakhir" name="current_job">
+						</div>
+						<div class="form-group">
+							<button class="text-uppercase text-white font-weight-bold border-0 w-100 btn-submit-popup" type="submit">Daftar sekarang</button>
+							<div class="d-flex justify-content-center btn-spinner-login"></div>				  
+						</div>						
+						<div class="form-group alert">
+						{{-- <div class="alert alert-danger">error</div> --}}
+						</div>					
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>  
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -299,10 +389,12 @@
     <script src="{{ asset('scripts/vendor.js') }}"></script>	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{{ asset('scripts/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+	<script src="{{ asset('scripts/main.js') }}"></script>
     <script src="{{ asset('scripts/ajax.js') }}"></script>
-    {{-- <script>
-      $('#modalAlert').modal('show')
-    </script> --}}
+    <script>
+    //   $('#modalIncome').modal('show')
+	  $('#inputDate').datepicker({});
+    </script>
   </body>
 </html>

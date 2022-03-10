@@ -10,7 +10,13 @@
                 <p class="mb-0">Penasaran gimana caranya dapat penghasilan tambahan yang bisa flexibel? cari tahu caranya</p>
                 <div class="more"><a href="#">disini</a></div>
               </div>
-              <div class="register-btn mt-4"><a href="#" class="text-uppercase d-flex align-items-center justify-content-center link-gradient rounded-pill text-white text-uppercase">Daftar</a></div>
+              <div class="register-btn mt-4">
+                @if (AppHelper::getAuth())	
+                <a data-toggle="modal" data-target="#modalIncome" class="text-uppercase d-flex align-items-center justify-content-center link-gradient rounded-pill text-white text-uppercase">Daftar</a>                
+                @else
+                <a data-toggle="modal" data-target="#modalAlert" class="text-uppercase d-flex align-items-center justify-content-center link-gradient rounded-pill text-white text-uppercase">Daftar</a>  
+                @endif
+              </div>              
             </div>
           </div>
         </div>
